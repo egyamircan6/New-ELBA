@@ -1,0 +1,1 @@
+import{commands as e,server as t}from"@vitest/browser/context";t.config.inspector.enabled&&await e.__vscode_waitForDebugger();export{};
