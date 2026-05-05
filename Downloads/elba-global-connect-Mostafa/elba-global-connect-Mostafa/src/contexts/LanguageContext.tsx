@@ -284,11 +284,11 @@ const ROUTE_MAP_AR_TO_EN: Record<string, string> = {
   "صيانة-بوتاجاز-البا": "elba-cooker-maintenance",
   "صيانة-بوتاجاز-البا-بلت-ان": "elba-built-in-cooker-repair",
 
-  "صيانة-فرن-البا": "elba-oven-maintenance",
+  "صيانة-افران-البا": "elba-oven-maintenance",
   "صيانة-فرن-البا-بلت-ان": "elba-built-in-oven-repair",
 
-  "صيانة-غسالة-اطباق-البا": "elba-dishwasher-repair",
-  "صيانة-غسالة-اطباق-البا-بلت-ان": "elba-built-in-dishwasher-repair",
+  "صيانة-غسالات-اطباق-البا": "elba-dishwasher-repair",
+  "صيانة-غسالات-اطباق-البا-بلت-ان": "elba-built-in-dishwasher-repair",
 };
 
 const ROUTE_MAP_EN_TO_AR: Record<string, string> = Object.fromEntries(

@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { MessageCircle, Phone } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 import dishwasherImg from "@/assest/elba-dishwasher.jpeg";
 
@@ -20,7 +21,8 @@ const PHONE_TEL = "+201211114528";
 const WHATSAPP_WA = "201211114528";
 const DOMAIN = "https://elba-eg.com";
 
-const LINK_CLASS = "text-blue-600 underline font-semibold hover:text-blue-700";
+const LINK_CLASS =
+  "text-primary hover:text-primary/80 font-bold hover:underline";
 
 type FaqItem = {
   q: string;
@@ -34,33 +36,122 @@ type SectionItem = {
   image: { src: string; alt: string; label?: string };
 };
 
+const FaqItem = ({
+  question,
+  answer,
+}: {
+  question: string;
+  answer: React.ReactNode;
+}) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="rounded-2xl border border-border bg-background shadow-sm overflow-hidden">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+      >
+        <span className="text-lg font-bold text-foreground">{question}</span>
+        <span
+          className={`text-2xl font-bold text-primary transition-transform ${
+            open ? "rotate-45" : ""
+          }`}
+        >
+          +
+        </span>
+      </button>
+
+      {open && (
+        <div className="px-6 pb-6 text-muted-foreground text-lg leading-relaxed space-y-3 text-left">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const DishwasherBuiltinElbaEn = () => {
   const [isServicePopupOpen, setIsServicePopupOpen] = useState(false);
 
   const metaTitle = `Best Elba Built-in Dishwasher Service in Egypt | Call ${PHONE_DISPLAY}`;
-  const metaDescription =
-    `Having issues with your Elba dishwasher? We provide fast home service for Elba built-in dishwashers with a certified warranty and genuine Italian spare parts. Book now: ${PHONE_DISPLAY}.`;
+  const metaDescription = `Having issues with your Elba dishwasher? We provide fast home service for Elba built-in dishwashers with a certified warranty and genuine Italian spare parts. Book now: ${PHONE_DISPLAY}.`;
+  const { t, isRTL, localePath } = useLanguage();
 
   // ✅ Sections (each one has image + content)
   const sections: SectionItem[] = useMemo(
     () => [
       {
         title:
-          "1. Why are we the leading experts for Elba built-in dishwasher service in Egypt?",
+          "Why Are We the Leading Experts in Elba built-in Dishwasher Repair in Egypt?",
         body: (
           <>
-            <p className="text-muted-foreground leading-relaxed">
-              With built-in appliances, experience is the key difference between
-              successful repair and damage to your kitchen finish. At American
-              Group, we specialize in Italian Elba technology and use advanced
-              diagnostic methods to identify faults quickly and safely.
+            <p>
+              <span>
+                When it comes to built-in appliances, expertise is the only
+                difference between a successful repair and costly damage to your
+                kitchen d&eacute;cor. At American Group, a leader in electrical
+                appliance maintenance, we take pride in being the most
+                specialized center for{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                in Egypt. Our team consists of engineers who have spent years
+                studying Italian Elba technology in depth.
+              </span>
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Call{" "}
-              <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-                {PHONE_DISPLAY}
-              </a>{" "}
-              to put your appliance in trusted hands.
+            <p>
+              <span>
+                We do not treat the dishwasher as a separate appliance, but as
+                an integrated part of your kitchen system. That is why we use
+                advanced diagnostic techniques that allow us to detect the root
+                cause of any malfunction in the shortest possible time.
+              </span>
+            </p>
+            <p>
+              <span>Once you call 01211114528 or contact the official </span>
+              <a
+                href="https://alba-eg.com/en/elba-hotline"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba hotline</span>
+              </a>
+              <span>
+                , you are placing your appliance in safe hands that guarantee
+                the highest quality standards in professional{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                and complete service for Elba kitchen appliances. You can also
+                learn more about the brand through{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-egypt"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba Egypt</span>
+              </a>
+              <span>.</span>
             </p>
           </>
         ),
@@ -71,21 +162,66 @@ const DishwasherBuiltinElbaEn = () => {
         },
       },
       {
-        title: "2. Fast home service (no kitchen dismantling)",
+        title:
+          "Immediate Elba built-in Dishwasher Repair at Home (Without Dismantling the Kitchen",
         body: (
           <>
-            <p className="text-muted-foreground leading-relaxed">
-              The biggest worry for built-in owners is scratching countertops or
-              loosening cabinets. Our technicians use professional pull/slide
-              tools designed for built-in units.
+            <p>
+              <span>
+                The biggest concern for built-in appliance owners is the fear of
+                removing wooden cabinets or scratching marble surfaces during
+                repairs. At American Group, we have completely eliminated this
+                concern.
+              </span>
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              We remove and reinstall the dishwasher precisely without
-              disturbing the kitchen setup. Call{" "}
-              <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-                {PHONE_DISPLAY}
-              </a>{" "}
-              for a fully equipped mobile workshop visit.
+            <p>
+              <span>We provide immediate </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                fully performed inside your home using professional extraction
+                and lifting equipment specifically designed for Built-in
+                appliances.
+              </span>
+            </p>
+            <p>
+              <span>
+                Our technicians are highly trained to remove and reinstall the
+                dishwasher with extreme precision, without affecting the kitchen
+                finishing or cabinet alignment.
+              </span>
+            </p>
+            <p>
+              <span>Call the unified number for </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span> at </span>
+              <a
+                href="https://api.whatsapp.com/send/?phone=201211114528&amp;text&amp;type=phone_number&amp;app_absent=0"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>01211114528</span>
+              </a>
+              <span>
+                {" "}
+                now, and a fully equipped mobile workshop will arrive at your
+                location to complete the repair in a single visit.
+              </span>
             </p>
           </>
         ),
@@ -96,31 +232,65 @@ const DishwasherBuiltinElbaEn = () => {
         },
       },
       {
-        title: "3. Genuine Italian spare parts with certified warranty",
+        title:
+          "Elba built-in Dishwasher Repair with Genuine Italian Spare Parts and Official Warranty",
         body: (
           <>
-            <p className="text-muted-foreground leading-relaxed">
-              Our golden rule: no substitutes for genuine parts. We install 100%
-              genuine Italian parts for the drain pump, spray system, and
-              control board.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              We provide a certified warranty covering both parts and labor.
-              Contact us on{" "}
+            <p>
+              <span>Our golden rule in </span>
               <a
-                href={`https://wa.me/${WHATSAPP_WA}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
                 className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
               >
-                WhatsApp
-              </a>{" "}
-              or call{" "}
-              <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-                {PHONE_DISPLAY}
+                <span>Elba built-in Dishwasher Repair</span>
               </a>
-              .
+              <span>
+                {" "}
+                is: &ldquo;There is no substitute for original parts.&rdquo;
+              </span>
             </p>
+            <p>
+              <span>
+                To ensure the efficiency of the drain pump, spray arms, heating
+                element, or electronic control board, we strictly install 100%
+                genuine Italian spare parts imported specifically for Elba
+                models.
+              </span>
+            </p>
+            <p>
+              <span>
+                Most importantly, we provide you with an official warranty from
+                the main service center covering both spare parts and labor.
+                This gives you complete peace of mind after every{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span> service.</span>
+            </p>
+            <p>
+              <span>
+                To request reliable original spare parts, contact us via
+                WhatsApp or call directly at 01211114528. If you have a
+                free-standing model instead of built-in, you can review{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>.</span>
+            </p>{" "}
           </>
         ),
         image: {
@@ -130,20 +300,70 @@ const DishwasherBuiltinElbaEn = () => {
         },
       },
       {
-        title: "4. Service for 10 & 14 place settings — all Elba models",
+        title:
+          "Elba built-in Dishwasher Repair for 10 and 14 Place Settings – All Elba Models Covered",
         body: (
           <>
-            <p className="text-muted-foreground leading-relaxed">
-              Whether your unit is 10 or 14 place settings, we run full
-              diagnostics: heating circuit, water-level sensors, and drying
-              performance to restore factory efficiency.
+            <p>
+              <span>
+                Whether you own a compact 10-place Elba dishwasher for small
+                kitchens or a large 14-place model for big families, we provide
+                complete technical solutions for all Elba versions.
+              </span>
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Don’t wait—call{" "}
-              <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-                {PHONE_DISPLAY}
-              </a>{" "}
-              to book.
+            <p>
+              <span>Our comprehensive inspection includes:</span>
+            </p>
+            <ul>
+              <li>
+                <span>Heating system check</span>
+              </li>
+              <li>
+                <span>Water level sensors inspection</span>
+              </li>
+              <li>
+                <span>Drainage system testing</span>
+              </li>
+              <li>
+                <span>Drying performance evaluation</span>
+              </li>
+              <li>
+                <span>Electronic board diagnostics</span>
+              </li>
+            </ul>
+            <p>
+              <span>We are the trusted experts in </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                relied upon by thousands of customers in Cairo and Giza.
+              </span>
+            </p>
+            <p>
+              <span>
+                Do not wait until the malfunction worsens. Call customer service
+                now at{" "}
+              </span>
+              <a
+                href="https://api.whatsapp.com/send/?phone=201211114528&amp;text&amp;type=phone_number&amp;app_absent=0"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>01211114528</span>
+              </a>
+              <span>
+                {" "}
+                and enjoy a service experience worthy of your premium Italian
+                appliances.
+              </span>
             </p>
           </>
         ),
@@ -154,170 +374,293 @@ const DishwasherBuiltinElbaEn = () => {
         },
       },
     ],
-    []
+    [],
   );
 
   // ✅ FAQ with links (UI) + plain text (schema)
   const faqs: FaqItem[] = useMemo(
     () => [
       {
-        q: "What is the certified service number for Elba built-in dishwashers?",
+        q: "What is the authorized Elba built-in Dishwasher Repair number?",
         aText: `The certified service number is ${PHONE_DISPLAY}. American Group provides instant fault reports and specialized built-in support, sending an expert technician to repair your unit at home without moving it.`,
         aJSX: (
           <>
-            The certified service number is{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>
-            . American Group provides instant fault reports and specialized
-            built-in support, sending an expert technician to repair your unit
-            at home without moving it.
+            <p>
+              <span>The authorized </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                number is 01211114528. Through this number, American Group
+                provides immediate fault reporting and specialized technical
+                support for integrated appliances, ensuring an expert technician
+                is dispatched to repair the appliance on-site without moving it
+                to a workshop.
+              </span>
+            </p>
           </>
         ),
       },
       {
-        q: "How can I contact the authorized Elba dishwasher service center?",
+        q: "How can I contact the authorized Elba dishwasher repair center?",
         aText: `You can contact the authorized service center in Egypt by calling the unified number ${PHONE_DISPLAY} or sending a WhatsApp message to book a home visit.`,
         aJSX: (
           <>
-            You can contact the authorized service center in Egypt by calling{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>{" "}
-            or sending a{" "}
-            <a
-              href={`https://wa.me/${WHATSAPP_WA}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={LINK_CLASS}
-            >
-              WhatsApp
-            </a>{" "}
-            message to book a home visit.
+            <p>
+              <span>
+                You can contact the authorized Elba dishwasher repair center in
+                Egypt by calling the unified Elba maintenance number 01211114528
+                or through the official{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-hotline"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba hotline</span>
+              </a>
+              <span>
+                . The center provides certified services that meet the highest
+                quality standards to guarantee your appliance efficiency. For
+                brand details, visit{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-egypt"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba Egypt</span>
+              </a>
+              <span>.</span>
+            </p>
           </>
         ),
       },
       {
-        q: "What is the customer service number to report a dishwasher fault?",
+        q: "Does the authorized Elba built-in Dishwasher Repair center provide genuine spare parts??",
         aText: `Customer service number is ${PHONE_DISPLAY}. You can also message us on WhatsApp to report issues and schedule a fast home visit.`,
         aJSX: (
           <>
-            Customer service number is{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>
-            . You can also message us on{" "}
-            <a
-              href={`https://wa.me/${WHATSAPP_WA}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={LINK_CLASS}
-            >
-              WhatsApp
-            </a>{" "}
-            to report issues and schedule a fast home visit.
+            <p>
+              <span>
+                Yes. American Group is committed to providing all genuine Elba
+                dishwasher spare parts, including the dishwasher motor, drain
+                pump, heating element, and electronic control board, with an
+                official warranty. To ensure correct installation, book{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span> at 01211114528.</span>
+            </p>
           </>
         ),
       },
       {
-        q: "Do you provide genuine spare parts?",
+        q: "What should I do if my Elba dishwasher is not taking in water?",
         aText:
           "Yes. We provide genuine spare parts including the motor, drain pump, heater, and control board—each covered by a certified warranty.",
         aJSX: (
           <>
-            Yes. We provide <strong>genuine spare parts</strong> including the
-            motor, drain pump, heater, and control board—each covered by a
-            certified warranty. To book, call{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>
-            .
+            <p>
+              <span>
+                If your Elba dishwasher is not taking in water, the issue may be
+                caused by a clogged filter or a faulty inlet valve. You can
+                request immediate{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                service by calling 01211114528 for professional inspection and
+                system reset.
+              </span>
+            </p>
           </>
         ),
       },
       {
-        q: "What should I do if my Elba dishwasher won’t fill with water?",
+        q: "What is the solution if my Elba dishwasher is not draining water?",
         aText: `It could be a clogged filter or a faulty inlet valve. Call ${PHONE_DISPLAY} for a technician to inspect connections and restore operation.`,
         aJSX: (
           <>
-            It could be a clogged filter or a faulty inlet valve. Call{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>{" "}
-            for a technician to inspect connections and restore operation.
+            <p>
+              <span>
+                When your Elba dishwasher is not draining water, the cause is
+                often a clogged filter or a defective drain pump. Contact
+                customer service at{" "}
+              </span>
+              <a
+                href="https://api.whatsapp.com/send/?phone=201211114528&amp;text&amp;type=phone_number&amp;app_absent=0"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>01211114528</span>
+              </a>
+              <span> to dispatch a certified technician for </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span> and solve the issue at home immediately.</span>
+            </p>
           </>
         ),
       },
       {
-        q: "What if the dishwasher doesn’t drain water?",
+        q: "Why is my Elba dishwasher not heating water or drying dishes?",
         aText:
           "Most commonly this is caused by a clogged filter or a faulty drain pump. Contact us and we’ll fix it at your home.",
         aJSX: (
           <>
-            Most commonly this is caused by a clogged filter or a faulty drain
-            pump. Contact us and we’ll fix it at your home. Call{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>{" "}
-            or message{" "}
-            <a
-              href={`https://wa.me/${WHATSAPP_WA}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={LINK_CLASS}
-            >
-              WhatsApp
-            </a>
-            .
+            <p>
+              <span>
+                If your Elba dishwasher is not heating water or not drying
+                dishes properly, this usually indicates a faulty heating element
+                or temperature sensor. We provide specialized technicians
+                for{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                to inspect the electrical circuit and replace damaged components
+                with genuine spare parts.
+              </span>
+            </p>
           </>
         ),
       },
       {
-        q: "Why doesn’t the dishwasher heat water or dry dishes well?",
+        q: "How should I handle water leakage from my Elba dishwasher?",
         aText:
           "This often indicates a heater or temperature sensor problem. Our technicians will inspect the electrical circuit and replace faulty parts with genuine ones.",
         aJSX: (
           <>
-            This often indicates a heater or temperature sensor problem. Our
-            technicians will inspect the electrical circuit and replace faulty
-            parts with genuine ones. Book now via{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>
-            .
+            <p>
+              <span>
+                If you notice water leakage from your Elba dishwasher,
+                contact{" "}
+              </span>
+              <a
+                href="https://api.whatsapp.com/send/?phone=201211114528&amp;text&amp;type=phone_number&amp;app_absent=0"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>01211114528</span>
+              </a>
+              <span> immediately for </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                . The leakage may result from worn door seals or internal hose
+                damage, especially in built-in models where fast response helps
+                protect kitchen cabinets.
+              </span>
+            </p>
           </>
         ),
       },
       {
-        q: "What should I do if there is water leakage?",
+        q: "What does it mean when an Elba dishwasher error code appears on the display?",
         aText: `Disconnect power immediately and call ${PHONE_DISPLAY}. Leakage may be caused by worn seals or internal hose issues.`,
         aJSX: (
           <>
-            Disconnect power immediately and call{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>
-            . Leakage may be caused by worn seals or internal hose issues.
-          </>
-        ),
-      },
-      {
-        q: "What does an error code on the screen mean?",
-        aText:
-          "Each error code (such as E1 or E4) points to a specific fault like overflow or weak water intake. Contact support to confirm the meaning and the proper fix.",
-        aJSX: (
-          <>
-            Each error code (such as E1 or E4) points to a specific fault like
-            overflow or weak water intake. Contact support via{" "}
-            <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
-              {PHONE_DISPLAY}
-            </a>{" "}
-            to confirm the meaning and the proper fix.
+            <p>
+              <span>
+                When your Elba dishwasher displays an error code such as E1 or
+                E4, it helps simplify diagnosis. Each error code corresponds to
+                a specific malfunction such as overflow or drainage issues.
+                Our{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                experts can accurately interpret and resolve the issue.
+              </span>
+            </p>
+            <p>
+              <span>
+                If you also need maintenance for other Elba kitchen appliances,
+                you can review{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-oven-maintenance"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba oven maintenance</span>
+              </a>
+              <span>, </span>
+              <a
+                href="https://alba-eg.com/en/elba-cooker-maintenance"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba cooker maintenance</span>
+              </a>
+              <span>, and </span>
+              <a
+                href="https://alba-eg.com/en/elba-hood-maintenance"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba hood maintenance</span>
+              </a>
+              <span>.</span>
+            </p>
           </>
         ),
       },
     ],
-    []
+    [],
   );
 
   // ✅ JSON-LD (FAQ uses aText)
@@ -415,12 +758,12 @@ const DishwasherBuiltinElbaEn = () => {
               </p>
 
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                Elba Built-in Dishwasher Service in Egypt
+                Best Elba built-in Dishwasher Repair Center in Egypt{" "}
               </h1>
 
               <p className="text-white/85 text-base md:text-lg max-w-2xl mx-auto mb-8">
-                Fast home repair — no kitchen dismantling. Certified warranty and
-                genuine Italian spare parts.
+                Fast home repair — no kitchen dismantling. Certified warranty
+                and genuine Italian spare parts.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -452,7 +795,7 @@ const DishwasherBuiltinElbaEn = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
+                    className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                   >
                     <Phone className="w-5 h-5" />
                     Call
@@ -462,7 +805,9 @@ const DishwasherBuiltinElbaEn = () => {
 
               <div className="mt-6 text-sm text-white/70">
                 Service number:{" "}
-                <span className="font-semibold text-white">{PHONE_DISPLAY}</span>
+                <span className="font-semibold text-white">
+                  {PHONE_DISPLAY}
+                </span>
               </div>
             </div>
           </div>
@@ -485,7 +830,7 @@ const DishwasherBuiltinElbaEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-7",
-                      reverse ? "lg:order-2" : "lg:order-1"
+                      reverse ? "lg:order-2" : "lg:order-1",
                     )}
                   >
                     <div className="max-w-none space-y-4">
@@ -493,8 +838,11 @@ const DishwasherBuiltinElbaEn = () => {
                         {s.title}
                       </h2>
 
-                      <div className="space-y-3">{s.body}</div>
-
+                      <div className="space-y-3">
+                        <p className="text-muted-foreground leading-relaxed lg:leading-10 font-cairo lg:text-xl font-semibold">
+                          {s.body}
+                        </p>
+                      </div>
                       {/* CTA */}
                       <div className="flex flex-col sm:flex-row gap-3 pt-2">
                         <Button
@@ -516,7 +864,10 @@ const DishwasherBuiltinElbaEn = () => {
                           </Button>
                         </a>
 
-                        <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
+                        <a
+                          href={`tel:${PHONE_TEL}`}
+                          className="w-full sm:w-auto"
+                        >
                           <Button variant="outline" className="gap-2 w-full">
                             <Phone className="w-4 h-4" />
                             Call
@@ -537,7 +888,7 @@ const DishwasherBuiltinElbaEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-5",
-                      reverse ? "lg:order-1" : "lg:order-2"
+                      reverse ? "lg:order-1" : "lg:order-2",
                     )}
                   >
                     <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">

@@ -335,7 +335,7 @@ const DishwasherElbaAr = () => {
         <meta name="description" content={SEO_META_DESCRIPTION} />
         <link
           rel="canonical"
-          href="https://alba-eg.com/صيانة-غسالة-اطباق-البا"
+          href="https://alba-eg.com/ar/صيانة-غسالات-اطباق-البا"
         />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>

@@ -19,7 +19,7 @@ import { useEffect } from "react";
 // Device categories that link to detail pages
 const deviceCategories = [
   {
-    slug: "صيانة-غسالة-اطباق-البا",
+    slug: "صيانة-غسالات-اطباق-البا",
     category: "washer",
     image:
       "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&h=400&fit=crop",
@@ -28,7 +28,7 @@ const deviceCategories = [
   },
 
   {
-    slug: "صيانة-غسالة-اطباق-البا-بلت-ان",
+    slug: "صيانة-غسالات-اطباق-البا-بلت-ان",
     category: "washer",
     image:
       "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&h=400&fit=crop",
@@ -55,7 +55,7 @@ const deviceCategories = [
   },
 
   {
-    slug: "صيانة-فرن-البا",
+    slug: "صيانة-افران-البا",
     category: "فرن",
     image:
       "https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=400&fit=crop",

@@ -11,6 +11,7 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
+import ServiceRequestPopup from "@/components/Form/ServiceRequestPopup";
 
 /**
  * Route pairs: AR <-> EN
@@ -22,7 +23,6 @@ const routePairs = [
 
   // Devices list
   { ar: "/:lang/صيانة-اجهزة-البا", en: "/:lang/device" },
-
   // Hood
   { ar: "/:lang/صيانة-شفاط-البا", en: "/:lang/elba-hood-maintenance" },
   {
@@ -38,22 +38,22 @@ const routePairs = [
   },
 
   // Oven
-  { ar: "/:lang/صيانة-فرن-البا", en: "/:lang/elba-oven-maintenance" },
+  { ar: "/:lang/صيانة-افران-البا", en: "/:lang/elba-oven-maintenance" },
   {
     ar: "/:lang/صيانة-فرن-البا-بلت-ان",
     en: "/:lang/elba-built-in-oven-repair",
   },
 
   // Dishwasher
-  { ar: "/:lang/صيانة-غسالة-اطباق-البا", en: "/:lang/elba-dishwasher-repair" },
+  { ar: "/:lang/صيانة-غسالات-اطباق-البا", en: "/:lang/elba-dishwasher-repair" },
   {
-    ar: "/:lang/صيانة-غسالة-اطباق-البا-بلت-ان",
+    ar: "/:lang/صيانة-غسالات-اطباق-البا-بلت-ان",
     en: "/:lang/elba-built-in-dishwasher-repair",
   },
 
   // Blog + Contact
-  { ar: "/:lang/blog", en: "/:lang/blog" },
-  { ar: "/:lang/elba-hotline", en: "/:lang/elba-hotline" },
+  { ar: "/:lang/المدونة", en: "/:lang/blog" },
+  { ar: "/:lang/رقم-صيانة-البا", en: "/:lang/elba-hotline" },
 
   // Branches
   {
@@ -223,42 +223,58 @@ const Header: React.FC = () => {
     () => [
       {
         key: "dishwasher",
-        label: language === "ar" ? "غسالة أطباق" : "Dishwasher",
-        arHref: "/:lang/صيانة-غسالة-اطباق-البا",
+        label:
+          language === "ar"
+            ? "صيانة  غسالات اطباق البا"
+            : "Elba Dishwasher Repair",
+        arHref: "/:lang/صيانة-غسالات-اطباق-البا",
       },
       {
         key: "dishwasherBuiltin",
-        label: language === "ar" ? "غسالة أطباق بلت إن" : "Built-in Dishwasher",
-        arHref: "/:lang/صيانة-غسالة-اطباق-البا-بلت-ان",
+        label:
+          language === "ar"
+            ? "صيانة غسالات اطباق البا بلت ان"
+            : "Elba built-in Dishwasher Repair",
+        arHref: "/:lang/صيانة-غسالات-اطباق-البا-بلت-ان",
       },
       {
         key: "cooker",
-        label: language === "ar" ? "بوتاجاز" : "Cooker",
+        label:
+          language === "ar" ? "صيانة بوتاجاز البا" : "Elba cooker maintenance",
         arHref: "/:lang/صيانة-بوتاجاز-البا",
       },
       {
         key: "cookerBuiltin",
-        label: language === "ar" ? "بوتاجاز بلت إن" : "Built-in Cooker",
+        label:
+          language === "ar"
+            ? "صيانة بوتاجاز البا بلت ان"
+            : "Elba built-in cooker Repair",
         arHref: "/:lang/صيانة-بوتاجاز-البا-بلت-ان",
       },
       {
         key: "oven",
-        label: language === "ar" ? "فرن" : "Oven",
-        arHref: "/:lang/صيانة-فرن-البا",
+        label: language === "ar" ? "صيانة افران البا" : "Elba oven maintenance",
+        arHref: "/:lang/صيانة-افران-البا",
       },
       {
         key: "ovenBuiltin",
-        label: language === "ar" ? "فرن بلت إن" : "Built-in Oven",
+        label:
+          language === "ar"
+            ? "صيانة فرن البا بلت ان"
+            : "Elba built-in oven Repair",
         arHref: "/:lang/صيانة-فرن-البا-بلت-ان",
       },
       {
         key: "hood",
-        label: language === "ar" ? "شفاط" : "Hood",
+        label: language === "ar" ? "صيانة شفاط البا" : "Elba hood maintenance",
         arHref: "/:lang/صيانة-شفاط-البا",
       },
       {
         key: "hoodBuiltin",
-        label: language === "ar" ? "شفاط بلت إن" : "Built-in Hood",
+        label:
+          language === "ar"
+            ? "صيانة شفاط البا بلت ان"
+            : "Elba built-in hood Repair",
         arHref: "/:lang/صيانة-شفاط-البا-بلت-ان",
       },
     ],
@@ -269,68 +285,89 @@ const Header: React.FC = () => {
     () => [
       {
         key: "fifthSettlement",
-        label: language === "ar" ? "التجمع الخامس" : "Fifth Settlement",
+        label:
+          language === "ar"
+            ? "التجمع الخامس (القاهرة الجديدة)"
+            : "Elba maintenance in Fifth Settlement",
         arHref: "/:lang/صيانة-البا-في-التجمع-الخامس",
       },
       {
         key: "sheikhZayed",
-        label: language === "ar" ? "الشيخ زايد" : "Sheikh Zayed",
+        label:
+          language === "ar" ? "الشيخ زايد" : "Elba maintenance in Sheikh Zayed",
         arHref: "/:lang/صيانة-البا-في-الشيخ-زايد",
       },
       {
         key: "heliopolis",
-        label: language === "ar" ? "مصر الجديدة" : "Heliopolis",
+        label:
+          language === "ar"
+            ? "مصر الجديدة (هليوبوليس)"
+            : "Elba maintenance in Heliopolis",
         arHref: "/:lang/صيانة-البا-في-مصر-الجديدة",
       },
       {
         key: "maadi",
-        label: language === "ar" ? "المعادي" : "Maadi",
+        label:
+          language === "ar"
+            ? "المعادي (دجلة والمعادي القديمة)"
+            : "Elba maintenance in Maadi",
         arHref: "/:lang/صيانة-البا-في-المعادي",
       },
       {
         key: "nasrCity",
-        label: language === "ar" ? "مدينة نصر" : "Nasr City",
+        label:
+          language === "ar" ? "مدينة نصر" : "Elba maintenance in Nasr City",
         arHref: "/:lang/صيانة-البا-في-مدينة-نصر",
       },
       {
         key: "october",
-        label: language === "ar" ? "6 أكتوبر" : "6th October",
+        label:
+          language === "ar"
+            ? "مدينة 6 أكتوبر"
+            : "Elba maintenance in 6th October",
         arHref: "/:lang/صيانة-البا-في-6-اكتوبر",
       },
       {
         key: "mohandessin",
-        label: language === "ar" ? "المهندسين" : "Mohandessin",
+        label:
+          language === "ar" ? "المهندسين" : "Elba maintenance in Mohandessin",
         arHref: "/:lang/صيانة-البا-في-المهندسين",
       },
       {
         key: "dokki",
-        label: language === "ar" ? "الدقي" : "Dokki",
+        label: language === "ar" ? "الدقي" : "Elba maintenance in Dokki",
         arHref: "/:lang/صيانة-البا-في-الدقي",
       },
       {
         key: "mokattam",
-        label: language === "ar" ? "المقطم" : "Mokattam",
+        label: language === "ar" ? "المقطم" : "Elba maintenance in Mokattam",
         arHref: "/:lang/صيانة-البا-في-المقطم",
       },
       {
         key: "madinaty",
-        label: language === "ar" ? "مدينتي" : "Madinaty",
+        label: language === "ar" ? "مدينتي" : "Elba maintenance in Madinaty",
         arHref: "/:lang/صيانة-البا-في-مدينتي",
       },
       {
         key: "rehab",
-        label: language === "ar" ? "الرحاب" : "Rehab City",
+        label:
+          language === "ar" ? "مدينة الرحاب" : "Elba maintenance in Rehab City",
         arHref: "/:lang/صيانة-البا-في-الرحاب",
       },
       {
         key: "sheratonAirport",
-        label: language === "ar" ? "شيراتون المطار" : "Sheraton Airport",
+        label:
+          language === "ar"
+            ? "شيراتون المطار"
+            : "Elba maintenance in Sheraton Airport",
         arHref: "/:lang/صيانة-البا-في-شيراتون-المطار",
       },
       {
         key: "newCapital",
         label:
-          language === "ar" ? "العاصمة الإدارية" : "New Administrative Capital",
+          language === "ar"
+            ? "العاصمة الإدارية (الحي السكني R3)"
+            : "Elba maintenance in New Administrative Capital",
         arHref: "/:lang/صيانة-البا-في-العاصمة-الادارية-الجديدة",
       },
     ],
@@ -370,6 +407,7 @@ const Header: React.FC = () => {
       document.removeEventListener("keydown", onEsc);
     };
   }, []);
+  const [isServicePopupOpen, setIsServicePopupOpen] = useState(false);
 
   const whatsappNumber = "201211114528"; // ✅ wa.me يحتاج كود الدولة بدون +
   const phoneNumber = "+201211114528";
@@ -423,7 +461,7 @@ const Header: React.FC = () => {
               </Link>
 
               <Link
-                to={hrefByLang("/:lang/blog")}
+                to={hrefByLang("/:lang/المدونة")}
                 className={`text-sm font-medium transition-colors duration-300 ${
                   isActive("/:lang/blog")
                     ? "text-primary"
@@ -434,7 +472,7 @@ const Header: React.FC = () => {
               </Link>
 
               <Link
-                to={hrefByLang("/:lang/elba-hotline")}
+                to={hrefByLang("/:lang/رقم-صيانة-البا")}
                 className={`text-sm font-medium transition-colors duration-300 ${
                   isActive("/:lang/elba-hotline")
                     ? "text-primary"
@@ -522,7 +560,7 @@ const Header: React.FC = () => {
               {branchesOpen && (
                 <div
                   onMouseLeave={() => setBranchesOpen(false)}
-                  className={`absolute mt-3 min-w-64 rounded-xl border border-border bg-background/95 backdrop-blur shadow-lg p-2 ${
+                  className={`absolute mt-3 min-w-[18rem] rounded-xl border border-border bg-background/95 backdrop-blur shadow-lg p-2 ${
                     isRTL ? "right-0" : "left-0"
                   }`}
                   role="menu"
@@ -587,12 +625,21 @@ const Header: React.FC = () => {
             </a>
 
             {/* Call */}
-            <a href={`tel:${phoneNumber}`} className="hidden md:flex">
+            {/* <a href={`tel:${phoneNumber}`} className="hidden md:flex">
               <Button variant="outline" size="sm" className="gap-2">
                 <Phone className="w-4 h-4" />
                 <span className="hidden lg:inline">{phoneNumber}</span>
               </Button>
-            </a>
+            </a> */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setIsServicePopupOpen(true)}
+              className="hidden md:flex  "
+            >
+              <MessageCircle className="w-5 h-5" />
+              {t("hero.cta.request")}
+            </Button>
 
             {/* Mobile Menu */}
             <Button
@@ -736,6 +783,11 @@ const Header: React.FC = () => {
           </div>
         )}
       </div>
+      <ServiceRequestPopup
+        isOpen={isServicePopupOpen}
+        onClose={() => setIsServicePopupOpen(false)}
+        domain="https://elba-eg.com"
+      />
     </nav>
   );
 };

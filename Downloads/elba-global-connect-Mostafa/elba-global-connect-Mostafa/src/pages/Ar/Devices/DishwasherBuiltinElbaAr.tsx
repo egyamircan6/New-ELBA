@@ -19,7 +19,7 @@ const PHONE_DISPLAY = "01211114528";
 const PHONE_TEL = "+201211114528";
 const WHATSAPP_WA = "201211114528";
 const DOMAIN = "https://elba-eg.com";
-const PAGE_URL = "https://alba-eg.com/صيانة-غسالة-اطباق-البا-بلت-ان";
+const PAGE_URL = "https://alba-eg.com/صيانة-غسالات-اطباق-البا-بلت-ان";
 const SITE_URL = "https://alba-eg.com/";
 
 const LINK_CLASS = "text-primary underline font-semibold hover:text-primary/80";

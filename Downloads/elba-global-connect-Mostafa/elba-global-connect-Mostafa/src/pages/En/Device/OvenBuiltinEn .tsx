@@ -48,7 +48,7 @@ const OvenBuiltinEn = () => {
       "If heating becomes weak, the thermostat or heater may need inspection.",
       "Do not block ventilation openings to keep the cooling fan stable.",
     ],
-    []
+    [],
   );
 
   // ✅ FAQ (same content) + aText/aJSX like Hood
@@ -170,7 +170,8 @@ const OvenBuiltinEn = () => {
       },
       {
         q: "Do repairs include a warranty?",
-        aText: "Yes. All repairs include a certified written warranty for parts and labor.",
+        aText:
+          "Yes. All repairs include a certified written warranty for parts and labor.",
         aJSX: (
           <>
             Yes. All repairs include a certified written warranty for parts and
@@ -206,7 +207,7 @@ const OvenBuiltinEn = () => {
         ),
       },
     ],
-    []
+    [],
   );
 
   // ✅ Sections (same content) but as SectionItem[] like Hood (title + body + image)
@@ -219,8 +220,8 @@ const OvenBuiltinEn = () => {
             Elba is an Italian brand known for premium kitchen quality, but even
             top appliances need regular care. We provide trusted elba built-in
             oven maintenance in Egypt through specialized engineers trained to
-            handle complex Italian technology, using genuine spare parts and fast
-            response through American Group. Call{" "}
+            handle complex Italian technology, using genuine spare parts and
+            fast response through American Group. Call{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>{" "}
@@ -267,8 +268,8 @@ const OvenBuiltinEn = () => {
         title: "Most common built-in Elba oven faults and how we fix them",
         body: (
           <p className="text-muted-foreground leading-relaxed">
-            Many people ask: Why is the Elba oven not heating? Or what causes the
-            flame to go out? The cause is often a faulty thermal sensor,
+            Many people ask: Why is the Elba oven not heating? Or what causes
+            the flame to go out? The cause is often a faulty thermal sensor,
             thermostat, heater, ignition issue, or blocked burners. We
             recalibrate temperature, repair fan faults, fix hinges, and perform
             a complete safety circuit check to prevent gas leaks and keep your
@@ -307,7 +308,7 @@ const OvenBuiltinEn = () => {
         },
       },
     ],
-    []
+    [],
   );
 
   // ✅ JSON-LD (FAQ uses aText)
@@ -375,7 +376,10 @@ const OvenBuiltinEn = () => {
             contactType: "customer service",
           },
         },
-        { "@type": "ServiceChannel", serviceUrl: `https://wa.me/${WHATSAPP_WA}` },
+        {
+          "@type": "ServiceChannel",
+          serviceUrl: `https://wa.me/${WHATSAPP_WA}`,
+        },
       ],
       description:
         "Elba built-in oven maintenance includes heating issues, thermostat faults, ignition problems, safety sensor repair, oven glass replacement, hinge replacement, fan troubleshooting, and error code diagnostics with genuine spare parts and certified warranty.",
@@ -414,7 +418,7 @@ const OvenBuiltinEn = () => {
         desc: "Your device is repaired and covered with service warranty.",
       },
     ],
-    []
+    [],
   );
 
   return (
@@ -447,7 +451,7 @@ const OvenBuiltinEn = () => {
             <h1
               className={cn(
                 "text-3xl md:text-5xl lg:text-6xl font-bold mb-4",
-                "font-sans"
+                "font-sans",
               )}
             >
               {h1}
@@ -482,11 +486,11 @@ const OvenBuiltinEn = () => {
                 </Button>
               </a>
 
-              <a href={`tel:${PHONE_TEL}`}>
+              <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-foreground gap-2 text-lg px-8 w-full sm:w-auto"
+                  className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                 >
                   <Phone className="w-5 h-5" />
                   Call
@@ -510,7 +514,7 @@ const OvenBuiltinEn = () => {
           <h2
             className={cn(
               "text-2xl md:text-3xl font-bold text-center mb-12 text-foreground",
-              "font-sans"
+              "font-sans",
             )}
           >
             How It Works
@@ -531,7 +535,7 @@ const OvenBuiltinEn = () => {
                 <h3
                   className={cn(
                     "font-bold text-lg mb-2 text-foreground",
-                    "font-sans"
+                    "font-sans",
                   )}
                 >
                   {step.title}
@@ -559,7 +563,7 @@ const OvenBuiltinEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-7",
-                      reverse ? "lg:order-2" : "lg:order-1"
+                      reverse ? "lg:order-2" : "lg:order-1",
                     )}
                   >
                     <div className="max-w-none space-y-4">
@@ -589,7 +593,10 @@ const OvenBuiltinEn = () => {
                           </Button>
                         </a>
 
-                        <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
+                        <a
+                          href={`tel:${PHONE_TEL}`}
+                          className="w-full sm:w-auto"
+                        >
                           <Button variant="outline" className="gap-2 w-full">
                             <Phone className="w-4 h-4" />
                             Call
@@ -610,7 +617,7 @@ const OvenBuiltinEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-5",
-                      reverse ? "lg:order-1" : "lg:order-2"
+                      reverse ? "lg:order-1" : "lg:order-2",
                     )}
                   >
                     <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">
@@ -692,7 +699,7 @@ const OvenBuiltinEn = () => {
             <h2
               className={cn(
                 "text-xl md:text-2xl font-bold mb-6 text-foreground flex items-center gap-2",
-                "font-sans"
+                "font-sans",
               )}
             >
               💡 Maintenance Tips
@@ -757,7 +764,7 @@ const OvenBuiltinEn = () => {
               <h2
                 className={cn(
                   "text-2xl md:text-3xl font-bold text-foreground mb-2",
-                  "font-sans"
+                  "font-sans",
                 )}
               >
                 Frequently Asked Questions
@@ -777,7 +784,7 @@ const OvenBuiltinEn = () => {
                   <AccordionTrigger
                     className={cn(
                       "text-foreground font-medium hover:no-underline",
-                      "font-sans"
+                      "font-sans",
                     )}
                   >
                     {f.q}

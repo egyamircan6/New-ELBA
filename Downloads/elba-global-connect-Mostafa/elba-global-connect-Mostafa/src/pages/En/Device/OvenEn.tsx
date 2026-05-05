@@ -132,7 +132,8 @@ const OvenEn = () => {
         },
       },
       {
-        title: "What are the most common Elba oven faults and how are they fixed?",
+        title:
+          "What are the most common Elba oven faults and how are they fixed?",
         body: (
           <>
             <p className="text-muted-foreground leading-relaxed">
@@ -243,7 +244,7 @@ const OvenEn = () => {
         },
       },
     ],
-    []
+    [],
   );
 
   // ✅ FAQ exactly as your structure (keep text unchanged)
@@ -312,7 +313,7 @@ const OvenEn = () => {
         extraLinkHref: URL_OVEN,
       },
     ],
-    []
+    [],
   );
 
   // ✅ JSON-LD (same structure)
@@ -447,7 +448,7 @@ const OvenEn = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
+                    className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                   >
                     <Phone className="w-5 h-5" />
                     Call
@@ -457,7 +458,9 @@ const OvenEn = () => {
 
               <div className="mt-6 text-sm text-white/70">
                 Service number:{" "}
-                <span className="font-semibold text-white">{PHONE_DISPLAY}</span>
+                <span className="font-semibold text-white">
+                  {PHONE_DISPLAY}
+                </span>
               </div>
             </div>
           </div>
@@ -509,7 +512,10 @@ const OvenEn = () => {
                           </Button>
                         </a>
 
-                        <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
+                        <a
+                          href={`tel:${PHONE_TEL}`}
+                          className="w-full sm:w-auto"
+                        >
                           <Button variant="outline" className="gap-2 w-full">
                             <Phone className="w-4 h-4" />
                             Call
@@ -587,7 +593,12 @@ const OvenEn = () => {
                     </div>
 
                     <div className="mt-4 text-xs text-muted-foreground text-center">
-                      <a href={SITE_URL} className={LINK_CLASS} target="_blank" rel="noreferrer">
+                      <a
+                        href={SITE_URL}
+                        className={LINK_CLASS}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         {SITE_URL}
                       </a>
                     </div>

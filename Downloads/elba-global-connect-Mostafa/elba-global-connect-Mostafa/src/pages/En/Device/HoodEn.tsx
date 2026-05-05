@@ -142,7 +142,7 @@ const HoodEn = () => {
         ),
       },
     ],
-    []
+    [],
   );
 
   const tips = useMemo(
@@ -152,7 +152,7 @@ const HoodEn = () => {
       "If the hood gets noisy or suction drops, check filters and duct path.",
       "Avoid harsh chemicals on the control panel to protect switches.",
     ],
-    []
+    [],
   );
 
   // ✅ 4 Sections (نفس المحتوى بدون تغيير)
@@ -285,7 +285,7 @@ const HoodEn = () => {
         },
       },
     ],
-    []
+    [],
   );
 
   const schemas = useMemo(() => {
@@ -338,7 +338,10 @@ const HoodEn = () => {
             contactType: "customer service",
           },
         },
-        { "@type": "ServiceChannel", serviceUrl: `https://wa.me/${WHATSAPP_WA}` },
+        {
+          "@type": "ServiceChannel",
+          serviceUrl: `https://wa.me/${WHATSAPP_WA}`,
+        },
       ],
       description:
         "Elba hood maintenance includes suction issues, motor repair, capacitor replacement, filter replacement, lighting repair, and safe duct cleaning with genuine parts and certified warranty.",
@@ -388,7 +391,7 @@ const HoodEn = () => {
             <h1
               className={cn(
                 "text-3xl md:text-5xl lg:text-6xl font-bold mb-4",
-                "font-sans"
+                "font-sans",
               )}
             >
               {device.h1}
@@ -426,7 +429,7 @@ const HoodEn = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-foreground gap-2 text-lg px-8 w-full"
+                  className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                 >
                   <Phone className="w-5 h-5" />
                   Call
@@ -460,7 +463,7 @@ const HoodEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-7",
-                      reverse ? "lg:order-2" : "lg:order-1"
+                      reverse ? "lg:order-2" : "lg:order-1",
                     )}
                   >
                     <div className="max-w-none space-y-4">
@@ -490,7 +493,10 @@ const HoodEn = () => {
                           </Button>
                         </a>
 
-                        <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
+                        <a
+                          href={`tel:${PHONE_TEL}`}
+                          className="w-full sm:w-auto"
+                        >
                           <Button variant="outline" className="gap-2 w-full">
                             <Phone className="w-4 h-4" />
                             Call
@@ -511,7 +517,7 @@ const HoodEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-5",
-                      reverse ? "lg:order-1" : "lg:order-2"
+                      reverse ? "lg:order-1" : "lg:order-2",
                     )}
                   >
                     <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">

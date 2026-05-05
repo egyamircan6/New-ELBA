@@ -9,14 +9,20 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Helmet } from "react-helmet";
 import dish from "@/assest/elba-dishwasher-ar.jpeg";
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 // =====================
 // Constants
 // =====================
 const PHONE_DISPLAY = "01211114528";
 const PHONE_TEL = "+201211114528";
 const WHATSAPP_WA_ME = "201211114528";
-
+const LINK_CLASS =
+  "text-primary hover:text-primary/80 font-bold hover:underline";
 // =====================
 // Device data (EN)
 // =====================
@@ -51,11 +57,11 @@ const devicesDetailData: Record<
 // =====================
 // SEO Meta (EN)
 // =====================
-const SEO_META_TITLE = "Best Elba Dishwasher Repair in Egypt | Book Now";
+const SEO_META_TITLE = "Best Elba Dishwasher Repair Center | Book Now ";
 const SEO_META_DESCRIPTION =
-  "Having issues with your Elba dishwasher? American Group provides fast in-home Elba dishwasher repair with certified warranty and genuine Italian spare parts. Book now: 01211114528.";
+  "Having problems with your Elba dishwasher? American Group provides fast and certified Elba Dishwasher Repair at home with genuine Italian spare parts and official warranty. Book your appointment now: 01211114528.";
 
-const SEO_H1 = "Elba Dishwasher Repair in Egypt | Fast In-Home Service";
+const SEO_H1 = "Best Elba Dishwasher Repair Service in Egypt";
 
 // =====================
 // JSON-LD (Service + FAQPage) (EN)
@@ -172,40 +178,6 @@ const buildJsonLd = () => ({
 // =====================
 // FAQ Item (same UI)
 // =====================
-const FaqItem = ({
-  question,
-  answer,
-}: {
-  question: string;
-  answer: React.ReactNode;
-}) => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="rounded-2xl border border-border bg-background shadow-sm overflow-hidden">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
-      >
-        <span className="text-lg font-bold text-foreground">{question}</span>
-        <span
-          className={`text-2xl font-bold text-primary transition-transform ${
-            open ? "rotate-45" : ""
-          }`}
-        >
-          +
-        </span>
-      </button>
-
-      {open && (
-        <div className="px-6 pb-6 text-muted-foreground text-lg leading-relaxed space-y-3 text-left">
-          {answer}
-        </div>
-      )}
-    </div>
-  );
-};
 
 type SectionItem = {
   title: string;
@@ -223,40 +195,54 @@ const DishwasherElbaEn = () => {
   const faqs = useMemo(
     () => [
       {
-        q: "What is the official Elba dishwasher repair number in Egypt?",
+        q: "What is the authorized Elba Dishwasher Repair number in Egypt?",
         a: (
           <p>
-            The official{" "}
+            <span>The authorized </span>
             <a
-              href={`https://wa.me/${WHATSAPP_WA_ME}`}
+              href="https://alba-eg.com/en/elba-dishwasher-repair"
+              className={LINK_CLASS}
               target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline font-semibold"
+              rel="noreferrer"
             >
-              Elba Dishwasher Repair
-            </a>{" "}
-            number is <strong>{PHONE_DISPLAY}</strong>.{" "}
-            <a
-              href="https://americangroup-eg.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline font-semibold"
-            >
-              <strong>American Group</strong>
-            </a>{" "}
-            provides specialized in-home service for Italian dishwashers with
-            genuine spare parts and certified warranty.
+              <span>Elba Dishwasher Repair</span>
+            </a>
+            <span>
+              {" "}
+              number is 01211114528. American Group provides professional home
+              repair services for all Italian dishwasher models with genuine
+              spare parts and official warranty.
+            </span>
           </p>
         ),
       },
       {
-        q: "How to fix an Elba dishwasher that won’t fill with water?",
+        q: "What is the solution if my Elba dishwasher does not take in water?",
         a: (
           <p>
-            This usually requires checking the <strong>Inlet Valve</strong> and
-            the inlet hose connections. Call <strong>{PHONE_DISPLAY}</strong> to
-            have a technician inspect the pump and sensors and restore operation
-            quickly.
+            <span>
+              This issue usually requires inspection of the inlet valve, water
+              hose connections, or internal pump system. You can request
+              expert{" "}
+            </span>
+            <a
+              href="https://alba-eg.com/en/elba-dishwasher-repair"
+              className={LINK_CLASS}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Elba Dishwasher Repair</span>
+            </a>
+            <span> by calling </span>
+            <a
+              href="https://api.whatsapp.com/send/?phone=201211114528&amp;text&amp;type=phone_number&amp;app_absent=0"
+              className={LINK_CLASS}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>01211114528</span>
+            </a>
+            <span> for immediate inspection and repair.</span>
           </p>
         ),
       },
@@ -264,31 +250,74 @@ const DishwasherElbaEn = () => {
         q: "What does error code E4 mean on an Elba dishwasher?",
         a: (
           <p>
-            <strong>E4</strong> typically indicates a{" "}
-            <strong>water leak</strong> or overflow in the base tray. A
-            technician should locate the leak source and fix it—book a visit via{" "}
-            <strong>{PHONE_DISPLAY}</strong>.
+            <span>
+              Error code E4 typically indicates water leakage or overflow inside
+              the base of the machine. This requires urgent{" "}
+            </span>
+            <a
+              href="https://alba-eg.com/en/elba-dishwasher-repair"
+              className={LINK_CLASS}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Elba Dishwasher Repair</span>
+            </a>
+            <span> to prevent further internal damage.</span>
           </p>
         ),
       },
       {
-        q: "Can you repair a built-in Elba dishwasher without removing kitchen cabinets?",
+        q: "Can a built-in Elba dishwasher be repaired without dismantling the kitchen?",
         a: (
           <p>
-            Yes. We specialize in repairing <strong>Built-in</strong> Elba
-            dishwashers at home without damaging the kitchen unit or countertop.
-            Call <strong>{PHONE_DISPLAY}</strong>.
+            Error code E4 typically indicates water leakage or overflow inside
+            the base of the machine. This requires urgent&nbsp;
+            <a
+              href="https://alba-eg.com/en/elba-dishwasher-repair"
+              className={LINK_CLASS}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Elba Dishwasher Repair
+            </a>
+            &nbsp;to prevent further internal damage.
+            <span>Yes. We specialize in built-in </span>
+            <a
+              href="https://alba-eg.com/en/elba-built-in-dishwasher-repair"
+              className={LINK_CLASS}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Elba built-in Dishwasher Repair</span>
+            </a>
+            <span>
+              {" "}
+              at home without damaging kitchen cabinets or countertops.
+            </span>
           </p>
         ),
       },
       {
-        q: "Why is my Elba dishwasher not drying well?",
+        q: "Why is my Elba dishwasher not drying dishes properly?",
         a: (
           <p>
-            Weak drying is often caused by low <strong>rinse aid</strong> or an
-            issue with the <strong>heater</strong>. Contact{" "}
-            <strong>{PHONE_DISPLAY}</strong> to check the electrical circuit and
-            install genuine parts if needed.
+            <span>
+              Poor drying performance is often caused by a faulty heater or
+              insufficient rinse aid. Contact our{" "}
+            </span>
+            <a
+              href="https://alba-eg.com/en/elba-dishwasher-repair"
+              className={LINK_CLASS}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Elba Dishwasher Repair</span>
+            </a>
+            <span>
+              {" "}
+              team at 01211114528 for electrical inspection and genuine spare
+              part replacement.
+            </span>
           </p>
         ),
       },
@@ -296,70 +325,116 @@ const DishwasherElbaEn = () => {
         q: "Where can I find genuine Elba dishwasher spare parts in Cairo?",
         a: (
           <p>
-            Genuine spare parts (pumps, spray arms, control boards) are
-            available through <strong>American Group</strong>. Call{" "}
-            <strong>{PHONE_DISPLAY}</strong> or message us via{" "}
+            <span>All genuine spare parts required for </span>
             <a
-              href={`https://wa.me/${WHATSAPP_WA_ME}`}
+              href="https://alba-eg.com/en/elba-dishwasher-repair"
+              className={LINK_CLASS}
               target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline font-semibold"
+              rel="noreferrer"
             >
-              <strong>WhatsApp</strong>
+              <span>Elba Dishwasher Repair</span>
             </a>
-            .
+            <span>
+              , including pumps, spray arms, and electronic boards, are
+              available through American Group.
+            </span>
           </p>
         ),
       },
       {
-        q: "How long is the warranty for Elba dishwasher repair?",
+        q: "How long is the warranty for Elba Dishwasher Repair?",
         a: (
           <p>
-            We provide a certified warranty up to <strong>12 months</strong> on
-            repair work and replaced parts. For details call{" "}
-            <strong>{PHONE_DISPLAY}</strong>.
-          </p>
-        ),
-      },
-      {
-        q: "Why is my Elba dishwasher noisy during operation?",
-        a: (
-          <p>
-            Noise is commonly caused by worn <strong>motor bearings</strong> or
-            clogged spray arms. Call <strong>{PHONE_DISPLAY}</strong> for
-            diagnosis and on-site repair.
-          </p>
-        ),
-      },
-      {
-        q: "How do I book a periodic maintenance appointment?",
-        a: (
-          <p>
-            Call the unified service number <strong>{PHONE_DISPLAY}</strong> to
-            schedule preventive maintenance and avoid sudden breakdowns.
-          </p>
-        ),
-      },
-      {
-        q: "How much does Elba dishwasher repair cost in 2026?",
-        a: (
-          <p>
-            Pricing starts with a technical inspection fee (deducted from the
-            final repair cost). For an estimate call{" "}
+            <span>We provide up to 12 months official warranty on all </span>
             <a
-              href={`https://wa.me/${WHATSAPP_WA_ME}`}
+              href="https://alba-eg.com/en/elba-dishwasher-repair"
+              className={LINK_CLASS}
               target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline font-semibold"
+              rel="noreferrer"
             >
-              <strong>{PHONE_DISPLAY}</strong>
+              <span>Elba Dishwasher Repair</span>
             </a>
-            .
+            <span> services and replaced spare parts.</span>
           </p>
+        ),
+      },
+      {
+        q: "Why is my Elba dishwasher making loud noise during operation?",
+        a: (
+          <>
+            <p>
+              <span>
+                Loud noise is usually caused by worn motor bearings or blocked
+                spray arms. Professional{" "}
+              </span>
+              <a
+                href="https://alba-eg.com/en/elba-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span> is required to diagnose and replace defective parts.</span>
+            </p>
+          </>
+        ),
+      },
+      {
+        q: "How can I contact Elba customer service to book preventive maintenance?",
+        a: (
+          <>
+            <p>
+              <span>You can contact the unified </span>
+              <a
+                href="https://alba-eg.com/en/elba-hotline"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba hotline</span>
+              </a>
+              <span>
+                {" "}
+                or call 01211114528 to schedule preventive maintenance.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        q: "What are the Elba Dishwasher Repair prices for 2026?",
+        a: (
+          <>
+            <p>
+              <span>
+                Prices start with a technical inspection fee that is deducted
+                from the total repair cost. Call{" "}
+              </span>
+              <a
+                href="https://api.whatsapp.com/send/?phone=201211114528&amp;text&amp;type=phone_number&amp;app_absent=0"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <strong>01211114528</strong>
+              </a>
+              <span> now for a detailed quotation for your </span>
+              <a
+                href="https://alba-eg.com/en/elba-dishwasher-repair"
+                className={LINK_CLASS}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>.</span>
+            </p>
+          </>
         ),
       },
     ],
-    []
+    [],
   );
 
   if (!device) {
@@ -381,27 +456,81 @@ const DishwasherElbaEn = () => {
   const tips = device.tipsEn;
 
   const steps = [
-    { num: "01", title: t("device.steps.1.title"), desc: t("device.steps.1.desc") },
-    { num: "02", title: t("device.steps.2.title"), desc: t("device.steps.2.desc") },
-    { num: "03", title: t("device.steps.3.title"), desc: t("device.steps.3.desc") },
+    {
+      num: "01",
+      title: t("device.steps.1.title"),
+      desc: t("device.steps.1.desc"),
+    },
+    {
+      num: "02",
+      title: t("device.steps.2.title"),
+      desc: t("device.steps.2.desc"),
+    },
+    {
+      num: "03",
+      title: t("device.steps.3.title"),
+      desc: t("device.steps.3.desc"),
+    },
   ];
 
   // ✅ NEW: Sections = image + content (Cooker-like)
   const sections: SectionItem[] = useMemo(
     () => [
       {
-        title: `${name} Repair & Maintenance in Egypt`,
+        title: `Why Is Our Center the First Choice for Elba Dishwasher Repair in Egypt?`,
         body: (
           <>
-            <p className="text-muted-foreground leading-relaxed">
-              {desc}
+            <p>
+              <span>
+                Dishwashers are sensitive appliances that require accurate
+                diagnostics and professional handling. That is why our
+                authorized center ranks among the top providers of{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span> in Egypt.</span>
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Book now via{" "}
-              <a href={`tel:${PHONE_TEL}`} className="text-primary underline font-semibold">
-                {PHONE_DISPLAY}
-              </a>{" "}
-              or WhatsApp.
+            <p>
+              <span>
+                We rely on engineers specialized in Italian Elba technology,
+                using advanced digital diagnostic equipment to detect faults
+                precisely without random disassembly or unnecessary part
+                replacement. Every{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                process begins with a full inspection of the electrical system,
+                water circulation unit, drainage pump, sensors, and heating
+                elements to ensure the real cause of the problem is identified
+                correctly.
+              </span>
+            </p>
+            <p>
+              <span>
+                When you contact us at 01211114528 or through the official{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-hotline">
+                <span>Elba hotline</span>
+              </a>
+              <span>, you receive professional </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                service from a trusted maintenance center that guarantees full
+                safety, fast execution, and long-term performance preservation
+                for your appliance. You can also learn more about the brand
+                through{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-egypt">
+                <span>Elba Egypt</span>
+              </a>
+              <span>.</span>
             </p>
           </>
         ),
@@ -412,19 +541,76 @@ const DishwasherElbaEn = () => {
         },
       },
       {
-        title: "Common Dishwasher Problems We Fix",
+        title:
+          "Immediate Elba Dishwasher Repair at Home with Genuine Spare Parts",
         body: (
           <>
-            <p className="text-muted-foreground leading-relaxed">
-              We repair water inlet faults, drainage problems, leakage, weak drying,
-              heater faults, and error codes (E1 / E4) using professional diagnostics.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              For urgent issues, call{" "}
-              <a href={`tel:${PHONE_TEL}`} className="text-primary underline font-semibold">
-                {PHONE_DISPLAY}
+            <p>
+              <span>
+                We understand how essential your dishwasher is in your daily
+                kitchen routine. That is why we provide fully home-based{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
               </a>
-              .
+              <span>
+                , eliminating the need to move the appliance or risk furniture
+                damage.
+              </span>
+            </p>
+            <p>
+              <span>
+                Our team arrives in fully equipped service vehicles carrying all
+                necessary tools and genuine Italian spare parts required for
+                professional{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>, including:</span>
+            </p>
+            <ul>
+              <li>
+                <span>Drain pumps</span>
+              </li>
+              <li>
+                <span>Circulation motors</span>
+              </li>
+              <li>
+                <span>Spray arms</span>
+              </li>
+              <li>
+                <span>Inlet valves</span>
+              </li>
+              <li>
+                <span>Sensors</span>
+              </li>
+              <li>
+                <span>Heating elements</span>
+              </li>
+              <li>
+                <span>Electronic control boards</span>
+              </li>
+            </ul>
+            <p>
+              <span>We install only original components during every </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                service to restore your appliance to factory-level condition and
+                prevent repeated breakdowns.
+              </span>
+            </p>
+            <p>
+              <span>To request an expert technician for certified </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>
+                , call 01211114528 now and enjoy complete peace of mind.
+              </span>
             </p>
           </>
         ),
@@ -435,48 +621,212 @@ const DishwasherElbaEn = () => {
         },
       },
       {
-        title: "Genuine Spare Parts + Certified Warranty",
+        title:
+          "Certified Elba Dishwasher Repair for Built-in and Free-Standing Models",
         body: (
           <>
-            <p className="text-muted-foreground leading-relaxed">
-              We use genuine Italian spare parts (pump, heater, inlet valve, control board)
-              to ensure stable performance and safe operation.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Warranty up to <strong>12 months</strong> depending on the part and fault.
-              Message us on{" "}
-              <a
-                href={`https://wa.me/${WHATSAPP_WA_ME}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary underline font-semibold"
-              >
-                WhatsApp
-              </a>{" "}
-              or call{" "}
-              <a href={`tel:${PHONE_TEL}`} className="text-primary underline font-semibold">
-                {PHONE_DISPLAY}
+            <p>
+              <span>
+                Whether you own a free-standing dishwasher or an integrated
+                built-in model, we provide comprehensive{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
               </a>
-              .
+              <span> solutions for 10-place and 14-place settings models.</span>
+            </p>
+            <p>
+              <span>If you own an integrated model, you can also review </span>
+              <a href="https://alba-eg.com/en/elba-built-in-dishwasher-repair">
+                <span>Elba built-in Dishwasher Repair</span>
+              </a>
+              <span> for specialized service inside kitchen cabinets.</span>
+            </p>
+            <p>
+              <span>
+                Built-in dishwashers require special expertise to avoid damaging
+                cabinets or countertops during removal and reinstallation. Our
+                technicians are trained specifically for safe and
+                professional{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                inside kitchen units without dismantling unnecessary parts.
+              </span>
+            </p>
+            <p>
+              <span>
+                Our service includes an official written warranty on all{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                work and replaced spare parts, ensuring free reinspection if
+                needed within the warranty period.
+              </span>
+            </p>
+            <p>
+              <span>Book your service appointment through the unified </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span> number 01211114528.</span>
             </p>
           </>
         ),
         image: {
           src: device.deviceImage,
-          alt: "Genuine spare parts and warranty for Elba dishwasher",
+          alt: "Common Elba cooker maintenance Problems and Fast Solutions",
           label: "Genuine Parts",
         },
       },
       {
-        title: "Fast In-Home Visit Across Egypt",
+        title: "Common Problems That Require Elba Dishwasher Repair",
         body: (
           <>
-            <p className="text-muted-foreground leading-relaxed">
-              We schedule home visits in Cairo, Giza, Alexandria and more.
-              The technician arrives with the right tools and parts to reduce repeat visits.
+            <p>
+              <span>
+                If you experience any of the following issues, you need
+                professional{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span> immediately:</span>
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Service number: <strong>{PHONE_DISPLAY}</strong>.
+            <ul>
+              <li>
+                <span>Dishwasher not taking in water</span>
+              </li>
+              <li>
+                <span>Dishwasher not draining properly</span>
+              </li>
+              <li>
+                <span>Water leakage under the machine</span>
+              </li>
+              <li>
+                <span>Error codes appearing on the digital display</span>
+              </li>
+              <li>
+                <span>Weak washing performance</span>
+              </li>
+              <li>
+                <span>Dishes not drying completely</span>
+              </li>
+              <li>
+                <span>Loud noise during operation</span>
+              </li>
+            </ul>
+            <p>
+              <span>
+                Our technicians perform a complete diagnostic procedure before
+                starting the{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                to ensure accurate troubleshooting and efficient repair from the
+                first visit.
+              </span>
+            </p>
+          </>
+        ),
+        image: {
+          src: device.deviceImage,
+          alt: "Fast in-home Elba dishwasher repair across Egypt",
+          label: "Fast Visit",
+        },
+      },
+      {
+        title:
+          "Elba Dishwasher Repair Troubleshooting Guide from Certified Experts",
+        body: (
+          <>
+            <p>
+              <span>Professional </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>
+                {" "}
+                does not end with fixing the problem. Our team provides
+                customers with preventive maintenance guidance to reduce future
+                breakdowns.
+              </span>
+            </p>
+            <p>
+              <span>After completing your </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span>, we guide you on:</span>
+            </p>
+            <ul>
+              <li>
+                <span>Proper filter cleaning</span>
+              </li>
+              <li>
+                <span>Correct use of dishwasher salt</span>
+              </li>
+              <li>
+                <span>Proper rinse aid levels</span>
+              </li>
+              <li>
+                <span>Regular inspection of spray arms</span>
+              </li>
+              <li>
+                <span>Preventing limescale buildup</span>
+              </li>
+            </ul>
+            <p>
+              <span>
+                This approach ensures your dishwasher continues operating
+                efficiently long after the{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span> service is completed.</span>
+            </p>
+            <p>
+              <span>
+                If you also need service for other kitchen appliances, you can
+                review{" "}
+              </span>
+              <a href="https://alba-eg.com/en/elba-oven-maintenance">
+                <span>Elba oven maintenance</span>
+              </a>
+              <span>, </span>
+              <a href="https://alba-eg.com/en/elba-cooker-maintenance">
+                <span>Elba cooker maintenance</span>
+              </a>
+              <span>, and </span>
+              <a href="https://alba-eg.com/en/elba-hood-maintenance">
+                <span>Elba hood maintenance</span>
+              </a>
+              <span>.</span>
+            </p>
+            <p>
+              <span>Do not hesitate to contact our </span>
+              <a href="https://alba-eg.com/en/elba-dishwasher-repair">
+                <span>Elba Dishwasher Repair</span>
+              </a>
+              <span> support team at </span>
+              <a href="https://api.whatsapp.com/send/?phone=201211114528&amp;text&amp;type=phone_number&amp;app_absent=0">
+                <span>01211114528</span>
+              </a>
+              <span>
+                {" "}
+                or message us on WhatsApp for an initial diagnosis of your
+                issue.
+              </span>
             </p>
           </>
         ),
@@ -487,7 +837,7 @@ const DishwasherElbaEn = () => {
         },
       },
     ],
-    [desc, device.deviceImage, name]
+    [device],
   );
 
   return (
@@ -504,25 +854,32 @@ const DishwasherElbaEn = () => {
 
       {/* Hero (Cooker-like) */}
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
-        <img src={device.heroImage} alt={name} className="w-full h-full object-cover" />
+        <img
+          src={device.heroImage}
+          alt={name}
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-foreground/55 to-transparent" />
 
         <div className="absolute inset-0">
           <div className="container mx-auto px-4 h-full flex items-center justify-center">
             <div className="text-center text-white z-10 max-w-3xl">
-              <p className="text-sm md:text-base text-white/70 mb-2">In-Home Service</p>
+              <p className="text-sm md:text-base text-white/70 mb-2">
+                In-Home Service
+              </p>
 
               <h1
                 className={cn(
                   "text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight",
-                  isRTL ? "font-cairo" : "font-sans"
+                  isRTL ? "font-cairo" : "font-sans",
                 )}
               >
                 {SEO_H1}
               </h1>
 
               <p className="text-white/85 text-base md:text-lg max-w-2xl mx-auto mb-8">
-                Book {name} service now — professional in-home repair with genuine parts and certified warranty.
+                Book {name} service now — professional in-home repair with
+                genuine parts and certified warranty.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -534,7 +891,12 @@ const DishwasherElbaEn = () => {
                   {t("hero.cta.request")}
                 </Button>
 
-                <a href={`https://wa.me/${WHATSAPP_WA_ME}`} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <a
+                  href={`https://wa.me/${WHATSAPP_WA_ME}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
                   <Button
                     size="lg"
                     variant="outline"
@@ -549,16 +911,19 @@ const DishwasherElbaEn = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
+                    className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                   >
                     <Phone className="w-5 h-5" />
-                    {PHONE_DISPLAY}
+                    Call
                   </Button>
                 </a>
               </div>
 
               <div className="mt-6 text-sm text-white/70">
-                Service number: <span className="font-semibold text-white">{PHONE_DISPLAY}</span>
+                Service number:{" "}
+                <span className="font-semibold text-white">
+                  {PHONE_DISPLAY}
+                </span>
               </div>
             </div>
           </div>
@@ -580,9 +945,13 @@ const DishwasherElbaEn = () => {
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <div className="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-primary font-bold text-xl">{step.num}</span>
+                  <span className="text-primary font-bold text-xl">
+                    {step.num}
+                  </span>
                 </div>
-                <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
+                <h3 className="font-bold text-lg mb-2 text-foreground">
+                  {step.title}
+                </h3>
                 <p className="text-muted-foreground text-sm">{step.desc}</p>
               </div>
             ))}
@@ -610,7 +979,7 @@ const DishwasherElbaEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-7",
-                      reverse ? "lg:order-2" : "lg:order-1"
+                      reverse ? "lg:order-2" : "lg:order-1",
                     )}
                   >
                     <div className="bg-card rounded-2xl border shadow-sm p-6 md:p-8">
@@ -618,8 +987,11 @@ const DishwasherElbaEn = () => {
                         {s.title}
                       </h3>
 
-                      <div className="space-y-3">{s.body}</div>
-
+                      <div className="space-y-3">
+                        <p className="text-muted-foreground leading-relaxed lg:leading-10 font-cairo lg:text-2xl font-semibold">
+                          {s.body}
+                        </p>
+                      </div>
                       <div className="flex flex-col sm:flex-row gap-3 mt-6">
                         <Button
                           size="lg"
@@ -635,14 +1007,25 @@ const DishwasherElbaEn = () => {
                           rel="noopener noreferrer"
                           className="w-full sm:w-auto"
                         >
-                          <Button size="lg" variant="outline" className="gap-2 w-full">
+                          <Button
+                            size="lg"
+                            variant="outline"
+                            className="gap-2 w-full"
+                          >
                             <MessageCircle className="w-5 h-5" />
                             WhatsApp
                           </Button>
                         </a>
 
-                        <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
-                          <Button size="lg" variant="outline" className="gap-2 w-full">
+                        <a
+                          href={`tel:${PHONE_TEL}`}
+                          className="w-full sm:w-auto"
+                        >
+                          <Button
+                            size="lg"
+                            variant="outline"
+                            className="gap-2 w-full"
+                          >
                             <Phone className="w-5 h-5" />
                             {PHONE_DISPLAY}
                           </Button>
@@ -655,14 +1038,16 @@ const DishwasherElbaEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-5",
-                      reverse ? "lg:order-1" : "lg:order-2"
+                      reverse ? "lg:order-1" : "lg:order-2",
                     )}
                   >
                     <div className="lg:sticky lg:top-24">
                       <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">
                         <div className="p-4 md:p-5">
                           <div className="flex items-center justify-between gap-3 mb-3">
-                            <p className="text-sm text-muted-foreground">{name}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {name}
+                            </p>
                             <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">
                               {s.image.label ?? "Home Service"}
                             </span>
@@ -687,7 +1072,10 @@ const DishwasherElbaEn = () => {
                           </p>
 
                           <div className="mt-4 flex flex-col sm:flex-row gap-3">
-                            <Button onClick={() => setIsServicePopupOpen(true)} className="w-full">
+                            <Button
+                              onClick={() => setIsServicePopupOpen(true)}
+                              className="w-full"
+                            >
                               {t("hero.cta.request")}
                             </Button>
 
@@ -697,7 +1085,10 @@ const DishwasherElbaEn = () => {
                               rel="noopener noreferrer"
                               className="w-full"
                             >
-                              <Button variant="outline" className="w-full gap-2">
+                              <Button
+                                variant="outline"
+                                className="w-full gap-2"
+                              >
                                 <MessageCircle className="w-4 h-4" />
                                 WhatsApp
                               </Button>
@@ -706,7 +1097,9 @@ const DishwasherElbaEn = () => {
 
                           <div className="mt-4 text-sm text-muted-foreground">
                             Service number:{" "}
-                            <span className="font-semibold text-foreground">{PHONE_DISPLAY}</span>
+                            <span className="font-semibold text-foreground">
+                              {PHONE_DISPLAY}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -753,7 +1146,11 @@ const DishwasherElbaEn = () => {
                 {t("hero.cta.request")}
               </Button>
 
-              <a href={`https://wa.me/${WHATSAPP_WA_ME}`} target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://wa.me/${WHATSAPP_WA_ME}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="lg" variant="outline" className="gap-2">
                   <MessageCircle className="w-5 h-5" />
                   WhatsApp
@@ -765,7 +1162,7 @@ const DishwasherElbaEn = () => {
       </section>
 
       {/* FAQ (unchanged UI) */}
-      <section className="py-16 md:py-20 bg-background">
+      {/* <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-8 text-left">
@@ -786,18 +1183,50 @@ const DishwasherElbaEn = () => {
                 </Button>
               </a>
 
-              <a href={`https://wa.me/${WHATSAPP_WA_ME}`} target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://wa.me/${WHATSAPP_WA_ME}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="gap-2 w-full sm:w-auto">
                   <MessageCircle className="w-5 h-5" />
                   WhatsApp
                 </Button>
               </a>
 
-              <Button onClick={() => setIsServicePopupOpen(true)} className="w-full sm:w-auto">
+              <Button
+                onClick={() => setIsServicePopupOpen(true)}
+                className="w-full sm:w-auto"
+              >
                 {t("hero.cta.request")}
               </Button>
             </div>
           </div>
+        </div>
+      </section> */}
+      {/* FAQ */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">
+            FAQs — Elba Dishwasher Service
+          </h2>
+
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((f, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="bg-card rounded-xl border shadow-sm px-4 md:px-6"
+              >
+                <AccordionTrigger className="text-foreground font-medium hover:no-underline text-left">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed text-left">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

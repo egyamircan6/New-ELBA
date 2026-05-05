@@ -185,7 +185,7 @@ const HoodBuiltinElbaEn = () => {
         },
       },
     ],
-    []
+    [],
   );
 
   // ✅ FAQ UI (links blue) + Schema text
@@ -195,8 +195,7 @@ const HoodBuiltinElbaEn = () => {
       aJSX: (
         <div className="space-y-3">
           <p className="text-muted-foreground leading-relaxed">
-            {f.aText}{" "}
-            {/* ✅ always show phone as blue link */}
+            {f.aText} {/* ✅ always show phone as blue link */}
             <span>
               {" "}
               <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
@@ -204,7 +203,6 @@ const HoodBuiltinElbaEn = () => {
               </a>
             </span>
           </p>
-
         </div>
       ),
       aText: cleanForSchema(f.aText),
@@ -263,7 +261,10 @@ const HoodBuiltinElbaEn = () => {
             contactType: "customer service",
           },
         },
-        { "@type": "ServiceChannel", serviceUrl: `https://wa.me/${WHATSAPP_WA}` },
+        {
+          "@type": "ServiceChannel",
+          serviceUrl: `https://wa.me/${WHATSAPP_WA}`,
+        },
       ],
       description:
         "Elba built-in hood service includes touch panel repair, motor replacement, deep internal detailing, and genuine parts installation with certified warranty.",
@@ -314,7 +315,7 @@ const HoodBuiltinElbaEn = () => {
             <h1
               className={cn(
                 "text-3xl md:text-5xl lg:text-6xl font-bold mb-4",
-                "font-sans"
+                "font-sans",
               )}
             >
               {device.h1}
@@ -353,7 +354,7 @@ const HoodBuiltinElbaEn = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-foreground gap-2 text-lg px-8 w-full"
+                  className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                 >
                   <Phone className="w-5 h-5" />
                   Call
@@ -387,7 +388,7 @@ const HoodBuiltinElbaEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-7",
-                      reverse ? "lg:order-2" : "lg:order-1"
+                      reverse ? "lg:order-2" : "lg:order-1",
                     )}
                   >
                     <div className="max-w-none space-y-4">
@@ -418,7 +419,10 @@ const HoodBuiltinElbaEn = () => {
                           </Button>
                         </a>
 
-                        <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
+                        <a
+                          href={`tel:${PHONE_TEL}`}
+                          className="w-full sm:w-auto"
+                        >
                           <Button variant="outline" className="gap-2 w-full">
                             <Phone className="w-4 h-4" />
                             Call
@@ -439,7 +443,7 @@ const HoodBuiltinElbaEn = () => {
                   <div
                     className={cn(
                       "lg:col-span-5",
-                      reverse ? "lg:order-1" : "lg:order-2"
+                      reverse ? "lg:order-1" : "lg:order-2",
                     )}
                   >
                     <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">

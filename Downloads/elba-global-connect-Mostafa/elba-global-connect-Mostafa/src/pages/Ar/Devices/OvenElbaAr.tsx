@@ -28,8 +28,8 @@ const LINK_CLASS = "text-blue-600 underline font-semibold hover:text-blue-700";
 const OvenElbaAr = () => {
   const [isServicePopupOpen, setIsServicePopupOpen] = useState(false);
 
-  const metaTitle = `صيانة افران البا (Elba) | تصليح منزلي بقطع غيار أصلية | اتصل ${PHONE_DISPLAY}`;
-  const metaDescription = `هل تبحث عن صيانة افران البا معتمدة؟ الشركة الأمريكية جروب توفر لك فني تصليح افران البا متخصص بقطع غيار أصلية وضمان عام. اتصل الآن على ${PHONE_DISPLAY} نصلك في الحال.`;
+  const metaTitle = `صيانة افران البا (Elba) | تصليح منزلي بقطع غيار أصلية | اتصل 01211114528`;
+  const metaDescription = `هل تبحث عن صيانة افران البا معتمدة؟ الشركة الأمريكية جروب توفر لك فني تصليح افران البا متخصص بقطع غيار أصلية وضمان عام. اتصل الآن على 01211114528 نصلك في الحال.`;
 
   const introH1 = "مرحــــباً بك في مركز صيانة افران البا المعتمد";
 
@@ -311,15 +311,14 @@ const OvenElbaAr = () => {
 
   return (
     <Layout>
-      <SEOHead title={metaTitle} description={metaDescription} />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
-      />
-
       {/* Hero */}
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+        <SEOHead title={metaTitle} description={metaDescription} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
+        />
         <img
           src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=1920&h=600&fit=crop"
           alt="صيانة افران البا"

@@ -3,8 +3,19 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { MapPin, Send, User, Phone, Mail, Wrench } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -13,9 +24,6 @@ import { useCustomerRequest } from "@/components/Form/hooks/useCustomerRequest";
 import { DEVICES, BRAND_ID } from "@/constants/devices";
 import { EGYPT_GOVERNORATES } from "@/constants/egyptGovernorates";
 import { ISSUE_OPTIONS } from "@/constants/issues";
-
-
-
 
 interface ServiceRequestPopupProps {
   isOpen: boolean;
@@ -40,7 +48,7 @@ const ServiceRequestPopup: React.FC<ServiceRequestPopupProps> = ({
 
   const selectedProduct = useMemo(
     () => DEVICES.find((d) => d.id === productId) || null,
-    [productId]
+    [productId],
   );
 
   // ✅ issue list حسب الجهاز
@@ -56,11 +64,13 @@ const ServiceRequestPopup: React.FC<ServiceRequestPopupProps> = ({
   const [inWarranty, setInWarranty] = useState<"1" | "0" | "">("");
 
   // ✅ hook + submit للـ API
-  const { open, setOpen, loading, form, setField, submit } = useCustomerRequest({
-    brandId: BRAND_ID,
-    productId,
-    domain,
-  });
+  const { open, setOpen, loading, form, setField, submit } = useCustomerRequest(
+    {
+      brandId: BRAND_ID,
+      productId,
+      domain,
+    },
+  );
 
   // ✅ sync open/close مع الأب
   useEffect(() => {
@@ -129,12 +139,17 @@ const ServiceRequestPopup: React.FC<ServiceRequestPopupProps> = ({
   return (
     <Dialog open={open} onOpenChange={(v) => !v && handleClose()}>
       <DialogContent
-        className={cn("sm:max-w-[520px] bg-background border-border", isRTL ? "font-cairo" : "font-sans")}
+        className={cn(
+          "sm:max-w-[520px] bg-background border-border",
+          isRTL ? "font-cairo text-right" : "font-sans",
+        )}
       >
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center mb-2">
             <span className="text-primary">{isRTL ? "احجز" : "Book"}</span>{" "}
-            <span className="text-foreground">{isRTL ? "خدمة الصيانة" : "Maintenance Service"}</span>
+            <span className="text-foreground">
+              {isRTL ? "خدمة الصيانة" : "Maintenance Service"}
+            </span>
           </DialogTitle>
 
           <p className="text-center text-muted-foreground">
@@ -163,7 +178,10 @@ const ServiceRequestPopup: React.FC<ServiceRequestPopupProps> = ({
               placeholder={isRTL ? "رقم الهاتف *" : "Phone Number *"}
               value={form.phone_number}
               onChange={(e) => setField("phone_number", e.target.value)}
-              className="pl-10 bg-card border-border"
+              className={cn(
+                "pl-10 bg-card border-border",
+                isRTL ? "text-right" : "",
+              )}
               type="tel"
               dir="ltr"
             />
@@ -173,7 +191,11 @@ const ServiceRequestPopup: React.FC<ServiceRequestPopupProps> = ({
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
-              placeholder={isRTL ? "البريد الإلكتروني (اختياري)" : "Email Address (optional)"}
+              placeholder={
+                isRTL
+                  ? "البريد الإلكتروني (اختياري)"
+                  : "Email Address (optional)"
+              }
               value={form.email}
               onChange={(e) => setField("email", e.target.value)}
               className="pl-10 bg-card border-border"
@@ -189,12 +211,24 @@ const ServiceRequestPopup: React.FC<ServiceRequestPopupProps> = ({
               setIssue("");
             }}
           >
-            <SelectTrigger className="bg-card border-border">
-              <SelectValue placeholder={isRTL ? "اختر الجهاز *" : "Select Device *"} />
+            <SelectTrigger
+              className={cn(
+                "bg-card border-border",
+                isRTL ? "justify-center" : "",
+              )}
+            >
+              <SelectValue
+                placeholder={isRTL ? "اختر الجهاز *" : "Select Device *"}
+                className={cn(isRTL ? "text-right" : "")}
+              />
             </SelectTrigger>
-            <SelectContent className="bg-card border-border">
+            <SelectContent className="bg-card border-border justify-start  ">
               {DEVICES.map((d) => (
-                <SelectItem key={d.id} value={String(d.id)}>
+                <SelectItem
+                  key={d.id}
+                  value={String(d.id)}
+                  className="justify-center"
+                >
                   {d.name}
                 </SelectItem>
               ))}
@@ -227,22 +261,44 @@ const ServiceRequestPopup: React.FC<ServiceRequestPopupProps> = ({
           </Select>
 
           {/* ✅ Warranty */}
-          <Select value={inWarranty} onValueChange={(v) => setInWarranty(v as "1" | "0")}>
-            <SelectTrigger className="bg-card border-border">
-              <SelectValue placeholder={isRTL ? "حالة الضمان *" : "Warranty Status *"} />
+          <Select
+            value={inWarranty}
+            onValueChange={(v) => setInWarranty(v as "1" | "0")}
+          >
+            <SelectTrigger
+              className={cn(
+                "bg-card border-border",
+                isRTL ? "text-right " : "",
+              )}
+            >
+              <Wrench className="h-5 w-5 text-muted-foreground mr-2" />
+
+              <SelectValue
+                placeholder={isRTL ? "حالة الضمان *" : "Warranty Status *"}
+                className="self-start"
+              />
             </SelectTrigger>
-            <SelectContent className="bg-card border-border">
-              <SelectItem value="1">{isRTL ? "ضمن الضمان" : "In Warranty"}</SelectItem>
-              <SelectItem value="0">{isRTL ? "خارج الضمان" : "Out of Warranty"}</SelectItem>
+            <SelectContent className="bg-card border-border text-right">
+              <SelectItem value="1">
+                {isRTL ? "ضمن الضمان" : "In Warranty"}
+              </SelectItem>
+              <SelectItem value="0">
+                {isRTL ? "خارج الضمان" : "Out of Warranty"}
+              </SelectItem>
             </SelectContent>
           </Select>
 
           {/* Governorate */}
-          <Select value={form.governorate} onValueChange={(v) => setField("governorate", v)}>
+          <Select
+            value={form.governorate}
+            onValueChange={(v) => setField("governorate", v)}
+          >
             <SelectTrigger className="bg-card border-border">
-              <SelectValue placeholder={isRTL ? "اختر المحافظة *" : "Select Governorate *"} />
+              <SelectValue
+                placeholder={isRTL ? "اختر المحافظة *" : "Select Governorate *"}
+              />
             </SelectTrigger>
-            <SelectContent className="bg-card border-border max-h-[260px] overflow-auto">
+            <SelectContent className="bg-card border-border max-h-[260px] overflow-auto ">
               {EGYPT_GOVERNORATES.map((g) => (
                 <SelectItem key={g} value={g}>
                   {g}
@@ -264,16 +320,29 @@ const ServiceRequestPopup: React.FC<ServiceRequestPopupProps> = ({
 
           {/* Note */}
           <Textarea
-            placeholder={isRTL ? "ملاحظات إضافية (اختياري)" : "Extra notes (optional)"}
+            placeholder={
+              isRTL ? "ملاحظات إضافية (اختياري)" : "Extra notes (optional)"
+            }
             value={form.note}
             onChange={(e) => setField("note", e.target.value)}
             className="bg-card border-border min-h-[90px]"
           />
 
           {/* Submit */}
-          <Button type="button" className="w-full gap-2" disabled={loading} onClick={handleSend}>
+          <Button
+            type="button"
+            className="w-full gap-2"
+            disabled={loading}
+            onClick={handleSend}
+          >
             <Send className="h-5 w-5" />
-            {loading ? (isRTL ? "جاري الإرسال..." : "Sending...") : isRTL ? "إرسال الطلب" : "Submit Request"}
+            {loading
+              ? isRTL
+                ? "جاري الإرسال..."
+                : "Sending..."
+              : isRTL
+                ? "إرسال الطلب"
+                : "Submit Request"}
           </Button>
         </form>
       </DialogContent>

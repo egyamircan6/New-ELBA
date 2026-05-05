@@ -275,7 +275,7 @@ const MokattamPageAr = () => {
       />
 
       {/* Hero */}
-      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden ">
         <img
           src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&h=600&fit=crop"
           alt="صيانة بوتاجاز البا"

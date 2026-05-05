@@ -130,7 +130,7 @@ const App = () => (
             }
           />
           <Route
-            path="/:lang/صيانة-فرن-البا"
+            path="/:lang/صيانة-افران-البا"
             element={
               <LanguageProvider>
                 <OvenElbaAr />
@@ -146,7 +146,7 @@ const App = () => (
             }
           />
           <Route
-            path="/:lang/صيانة-غسالة-اطباق-البا"
+            path="/:lang/صيانة-غسالات-اطباق-البا"
             element={
               <LanguageProvider>
                 <DishwasherElbaAr />
@@ -154,7 +154,7 @@ const App = () => (
             }
           />
           <Route
-            path="/:lang/صيانة-غسالة-اطباق-البا-بلت-ان"
+            path="/:lang/صيانة-غسالات-اطباق-البا-بلت-ان"
             element={
               <LanguageProvider>
                 <DishwasherBuiltinElbaAr />
@@ -275,6 +275,14 @@ const App = () => (
             }
           />
           <Route
+            path="/:lang/المدونة"
+            element={
+              <LanguageProvider>
+                <Blog />
+              </LanguageProvider>
+            }
+          />
+          <Route
             path="/:lang/blog"
             element={
               <LanguageProvider>
@@ -297,7 +305,16 @@ const App = () => (
                 <ContactSwitch />
               </LanguageProvider>
             }
-          />{" "}
+          />
+          <Route
+            path="/:lang/رقم-صيانة-البا"
+            element={
+              <LanguageProvider>
+                <ContactSwitch />
+              </LanguageProvider>
+            }
+          />
+
           <Route
             path="/:lang/privacy-policy"
             element={
