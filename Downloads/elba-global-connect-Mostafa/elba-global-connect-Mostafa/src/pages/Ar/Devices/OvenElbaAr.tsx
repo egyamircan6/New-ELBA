@@ -23,8 +23,7 @@ const SITE_URL = "https://alba-eg.com/";
 const PAGE_URL = "https://alba-eg.com/صيانة-افران-البا";
 const BRAND_URL = "https://americangroup-eg.com/";
 
-const LINK_CLASS =
-  "text-blue-600 underline font-semibold hover:text-blue-700";
+const LINK_CLASS = "text-blue-600 underline font-semibold hover:text-blue-700";
 
 const OvenElbaAr = () => {
   const [isServicePopupOpen, setIsServicePopupOpen] = useState(false);
@@ -44,8 +43,8 @@ const OvenElbaAr = () => {
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>{" "}
-            لحجز صيانة منزلية فورية لجميع موديلات الغاز والكهرباء والبلت إن، مع ضمان
-            على قطع الغيار الأصلية. ويمكنك التواصل عبر{" "}
+            لحجز صيانة منزلية فورية لجميع موديلات الغاز والكهرباء والبلت إن، مع
+            ضمان على قطع الغيار الأصلية. ويمكنك التواصل عبر{" "}
             <a
               href={`https://wa.me/${WHATSAPP_WA}`}
               target="_blank"
@@ -63,9 +62,8 @@ const OvenElbaAr = () => {
         q: "كيف يمكنني تصليح فرن البا الذي لا يسخن؟",
         a: (
           <p>
-            عدم التسخين غالباً يكون بسبب تلف{" "}
-            <strong>السخان (Heater)</strong> أو <strong>الترموستات</strong>. اطلب فني
-            متخصص عبر{" "}
+            عدم التسخين غالباً يكون بسبب تلف <strong>السخان (Heater)</strong> أو{" "}
+            <strong>الترموستات</strong>. اطلب فني متخصص عبر{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>{" "}
@@ -78,8 +76,8 @@ const OvenElbaAr = () => {
         q: "أين أجد قطع غيار افران البا الأصلية؟",
         a: (
           <p>
-            نوفر قطع غيار افران البا الأصلية مثل{" "}
-            <strong>المفصلات</strong> و<strong>الزجاج الحراري</strong> و<strong>شمعات الإشعال</strong>.
+            نوفر قطع غيار افران البا الأصلية مثل <strong>المفصلات</strong> و
+            <strong>الزجاج الحراري</strong> و<strong>شمعات الإشعال</strong>.
             لطلب قطعة غيار أصلية مع تركيب وضمان، اتصل على{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
@@ -93,8 +91,8 @@ const OvenElbaAr = () => {
         q: "ما سبب انطفاء شعلة فرن البا الغاز فجأة؟",
         a: (
           <p>
-            انطفاء الشعلة يحدث غالباً بسبب تلف <strong>حساس الأمان</strong> أو انسداد
-            الفونيات. للحجز السريع اتصل على{" "}
+            انطفاء الشعلة يحدث غالباً بسبب تلف <strong>حساس الأمان</strong> أو
+            انسداد الفونيات. للحجز السريع اتصل على{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>{" "}
@@ -107,8 +105,8 @@ const OvenElbaAr = () => {
         q: "هل يتوفر فني صيانة افران البا متخصص للـ Built-in؟",
         a: (
           <p>
-            نعم، لدينا فني متخصص لصيانة <strong>فرن البا بلت إن</strong> لضمان فك وتركيب
-            احترافي دون الإضرار بوحدات المطبخ. اتصل على{" "}
+            نعم، لدينا فني متخصص لصيانة <strong>فرن البا بلت إن</strong> لضمان
+            فك وتركيب احترافي دون الإضرار بوحدات المطبخ. اتصل على{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>{" "}
@@ -121,8 +119,8 @@ const OvenElbaAr = () => {
         q: "كيف يتم تغيير زجاج فرن البا المكسور؟",
         a: (
           <p>
-            تغيير زجاج فرن البا يحتاج <strong>زجاج حراري</strong> مطابق للموديل ومقاوم
-            للصدمات. اطلب توفير وتركيب سريع عبر{" "}
+            تغيير زجاج فرن البا يحتاج <strong>زجاج حراري</strong> مطابق للموديل
+            ومقاوم للصدمات. اطلب توفير وتركيب سريع عبر{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>
@@ -136,7 +134,8 @@ const OvenElbaAr = () => {
         a: (
           <p>
             رموز الخطأ تشير غالباً إلى مشكلة في{" "}
-            <strong>الكارتة الإلكترونية</strong> أو <strong>الحساسات</strong>. اتصل على{" "}
+            <strong>الكارتة الإلكترونية</strong> أو <strong>الحساسات</strong>.
+            اتصل على{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>{" "}
@@ -162,8 +161,8 @@ const OvenElbaAr = () => {
         q: "كيف أحافظ على مفصلات فرن البا من التلف؟",
         a: (
           <p>
-            لتقليل تلف المفصلات: نظّف الدهون بانتظام وتجنب الضغط على الباب بعنف. عند
-            وجود صعوبة في الغلق اطلب استبدال مفصلات أصلية عبر{" "}
+            لتقليل تلف المفصلات: نظّف الدهون بانتظام وتجنب الضغط على الباب بعنف.
+            عند وجود صعوبة في الغلق اطلب استبدال مفصلات أصلية عبر{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>
@@ -176,8 +175,8 @@ const OvenElbaAr = () => {
         q: "هل يوجد فرع لـ صيانة افران البا قريب مني؟",
         a: (
           <p>
-            الخدمة متاحة عبر فريق صيانة متنقل يغطي القاهرة والجيزة وباقي المحافظات.
-            اتصل على{" "}
+            الخدمة متاحة عبر فريق صيانة متنقل يغطي القاهرة والجيزة وباقي
+            المحافظات. اتصل على{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               {PHONE_DISPLAY}
             </a>{" "}
@@ -187,11 +186,12 @@ const OvenElbaAr = () => {
         aText: `الخدمة تغطي القاهرة والجيزة وجميع محافظات مصر عبر فريق صيانة متنقل. اتصل على ${PHONE_DISPLAY} لتحديد أقرب موعد حسب منطقتك دون نقل الجهاز.`,
       },
     ],
-    []
+    [],
   );
 
   const schemaGraph = useMemo(() => {
-    const logo = "https://westinghouse-egy.com/wp-content/uploads/2026/02/Elba-Egypt.png";
+    const logo =
+      "https://westinghouse-egy.com/wp-content/uploads/2026/02/Elba-Egypt.png";
 
     return {
       "@context": "https://schema.org",
@@ -288,7 +288,10 @@ const OvenElbaAr = () => {
                 contactType: "customer service",
               },
             },
-            { "@type": "ServiceChannel", serviceUrl: `https://wa.me/${WHATSAPP_WA}` },
+            {
+              "@type": "ServiceChannel",
+              serviceUrl: `https://wa.me/${WHATSAPP_WA}`,
+            },
           ],
           description:
             "خدمة صيانة افران البا تشمل إصلاح عدم التسخين، أعطال الترموستات، الاشتعال، حساسات الأمان، تغيير زجاج الفرن، ومعالجة Error Codes، مع قطع غيار أصلية وضمان.",
@@ -327,14 +330,17 @@ const OvenElbaAr = () => {
         <div className="absolute inset-0">
           <div className="container mx-auto px-4 h-full flex items-center justify-center">
             <div className="text-center text-white z-10 max-w-3xl font-cairo">
-              <p className="text-sm md:text-base text-white/70 mb-2">خدمات عند المنزل</p>
+              <p className="text-sm md:text-base text-white/70 mb-2">
+                خدمات عند المنزل
+              </p>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight lg:leading-[5rem]">
                 {introH1}
               </h1>
 
               <p className="text-white/85 text-base md:text-lg max-w-2xl mx-auto mb-8">
-                تصليح فرن البا بالمنزل بقطع غيار أصلية وضمان معتمد — فحص دقيق للحساسات والترموستات ودائرة الأمان.
+                تصليح فرن البا بالمنزل بقطع غيار أصلية وضمان معتمد — فحص دقيق
+                للحساسات والترموستات ودائرة الأمان.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -366,7 +372,7 @@ const OvenElbaAr = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
+                    className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
                   >
                     <Phone className="w-5 h-5" />
                     اتصال
@@ -375,7 +381,10 @@ const OvenElbaAr = () => {
               </div>
 
               <div className="mt-6 text-sm text-white/70">
-                رقم الخدمة: <span className="font-semibold text-white">{PHONE_DISPLAY}</span>
+                رقم الخدمة:{" "}
+                <span className="font-semibold text-white">
+                  {PHONE_DISPLAY}
+                </span>
               </div>
             </div>
           </div>
@@ -393,8 +402,8 @@ const OvenElbaAr = () => {
                     لماذا تختارنا للصيانة افران البا؟
                   </h2>
                   <div className="text-muted-foreground leading-relaxed">
-                    تعتبر ماركة البا الإيطالية رمزاً للجودة في المطبخ، ولكن حتى أفضل الأجهزة تحتاج إلى عناية دورية.
-                    نحن نوفر لك أفضل خدمة{" "}
+                    تعتبر ماركة البا الإيطالية رمزاً للجودة في المطبخ، ولكن حتى
+                    أفضل الأجهزة تحتاج إلى عناية دورية. نحن نوفر لك أفضل خدمة{" "}
                     <a
                       href={PAGE_URL}
                       target="_blank"
@@ -403,8 +412,9 @@ const OvenElbaAr = () => {
                     >
                       صيانة افران البا
                     </a>{" "}
-                    في مصر، معتمدين على فريق من المهندسين المتخصصين في التعامل مع التقنيات الإيطالية،
-                    وتقديم قطع غيار أصلية وسرعة رد فائقة من خلال{" "}
+                    في مصر، معتمدين على فريق من المهندسين المتخصصين في التعامل
+                    مع التقنيات الإيطالية، وتقديم قطع غيار أصلية وسرعة رد فائقة
+                    من خلال{" "}
                     <a
                       href={BRAND_URL}
                       target="_blank"
@@ -422,7 +432,8 @@ const OvenElbaAr = () => {
                     >
                       صيانة أجهزة Elba
                     </a>{" "}
-                    تغطي الأعطال الشائعة والمفاجئة لضمان عودة الجهاز لكفاءة المصنع.
+                    تغطي الأعطال الشائعة والمفاجئة لضمان عودة الجهاز لكفاءة
+                    المصنع.
                   </div>
                 </div>
               </div>
@@ -432,16 +443,25 @@ const OvenElbaAr = () => {
                   <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">
                     <div className="p-4 md:p-5">
                       <div className="flex items-center justify-between gap-3 mb-3">
-                        <p className="text-sm text-muted-foreground font-cairo">فرن إلبا (Elba Oven)</p>
+                        <p className="text-sm text-muted-foreground font-cairo">
+                          فرن إلبا (Elba Oven)
+                        </p>
                         <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium font-cairo">
                           بالمنزل
                         </span>
                       </div>
 
-                      <img src={ovenImg} alt="فرن إلبا" className="w-full rounded-xl shadow-sm object-cover" />
+                      <img
+                        src={ovenImg}
+                        alt="فرن إلبا"
+                        className="w-full rounded-xl shadow-sm object-cover"
+                      />
 
                       <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        <Button onClick={() => setIsServicePopupOpen(true)} className="w-full font-cairo">
+                        <Button
+                          onClick={() => setIsServicePopupOpen(true)}
+                          className="w-full font-cairo"
+                        >
                           طلب
                         </Button>
 
@@ -451,14 +471,20 @@ const OvenElbaAr = () => {
                           rel="noopener noreferrer"
                           className="w-full"
                         >
-                          <Button variant="outline" className="w-full gap-2 font-cairo">
+                          <Button
+                            variant="outline"
+                            className="w-full gap-2 font-cairo"
+                          >
                             <MessageCircle className="w-4 h-4" />
                             واتساب
                           </Button>
                         </a>
 
                         <a href={`tel:${PHONE_TEL}`} className="w-full">
-                          <Button variant="outline" className="w-full gap-2 font-cairo">
+                          <Button
+                            variant="outline"
+                            className="w-full gap-2 font-cairo"
+                          >
                             <Phone className="w-4 h-4" />
                             اتصال
                           </Button>
@@ -466,12 +492,17 @@ const OvenElbaAr = () => {
                       </div>
 
                       <div className="mt-4 text-sm text-muted-foreground font-cairo">
-                        رقم الخدمة: <span className="font-semibold text-foreground">{PHONE_DISPLAY}</span>
+                        رقم الخدمة:{" "}
+                        <span className="font-semibold text-foreground">
+                          {PHONE_DISPLAY}
+                        </span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-4 text-xs text-muted-foreground text-center">{DOMAIN}</div>
+                  <div className="mt-4 text-xs text-muted-foreground text-center">
+                    {DOMAIN}
+                  </div>
                 </div>
               </div>
             </div>
@@ -483,7 +514,8 @@ const OvenElbaAr = () => {
                     هل تبحث عن فني صيانة افران البا في القاهرة قريب منك؟
                   </h2>
                   <div className="text-muted-foreground leading-relaxed">
-                    إذا كنت تسكن في القاهرة وتبحث عن السرعة والدقة، فإن اختيارك لنا يضمن لك وصول فني متخصص في{" "}
+                    إذا كنت تسكن في القاهرة وتبحث عن السرعة والدقة، فإن اختيارك
+                    لنا يضمن لك وصول فني متخصص في{" "}
                     <a
                       href="https://alba-eg.com/صيانة-فرن-البا-بلت-ان"
                       target="_blank"
@@ -492,8 +524,9 @@ const OvenElbaAr = () => {
                     >
                       صيانة فرن البا بلت ان
                     </a>{" "}
-                    في نفس اليوم. نوفر صيانة منزلية دون نقل الجهاز، مع أدوات فحص دقيقة للحساسات والترموستات.
-                    لو فرن البا فيه أي عطل، اتصل الآن على{" "}
+                    في نفس اليوم. نوفر صيانة منزلية دون نقل الجهاز، مع أدوات فحص
+                    دقيقة للحساسات والترموستات. لو فرن البا فيه أي عطل، اتصل
+                    الآن على{" "}
                     <a
                       href="https://alba-eg.com/رقم-صيانة-البا"
                       target="_blank"
@@ -520,13 +553,19 @@ const OvenElbaAr = () => {
                 <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">
                   <div className="p-4 md:p-5">
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <p className="text-sm text-muted-foreground font-cairo">فني متخصص</p>
+                      <p className="text-sm text-muted-foreground font-cairo">
+                        فني متخصص
+                      </p>
                       <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium font-cairo">
                         سرعة وصول
                       </span>
                     </div>
 
-                    <img src={ovenImg} alt="فني صيانة افران البا" className="w-full rounded-xl shadow-sm object-cover" />
+                    <img
+                      src={ovenImg}
+                      alt="فني صيانة افران البا"
+                      className="w-full rounded-xl shadow-sm object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -540,8 +579,9 @@ const OvenElbaAr = () => {
                   </h2>
                   <div className="text-muted-foreground leading-relaxed">
                     يسأل الكثيرون: <strong>لماذا فرن البا لا يسخن؟</strong> أو{" "}
-                    <strong>ما سبب انطفاء الشعلة؟</strong> وغالباً يكون السبب تلف{" "}
-                    <strong>الحساس الحراري</strong> أو احتياج الفونيات للتنظيف. نحن في{" "}
+                    <strong>ما سبب انطفاء الشعلة؟</strong> وغالباً يكون السبب
+                    تلف <strong>الحساس الحراري</strong> أو احتياج الفونيات
+                    للتنظيف. نحن في{" "}
                     <a
                       href="https://alba-eg.com/صيانة-البا-في-مصر"
                       target="_blank"
@@ -550,9 +590,9 @@ const OvenElbaAr = () => {
                     >
                       صيانة البا في مصر
                     </a>{" "}
-                    متخصصون في إصلاح أعطال ضعف النار، كسر المفصلات، أو عطل مروحة التبريد،
-                    مع فحص دائرة الأمان لتجنب أي مخاطر. للحجز اتصل فوراً على{" "}
-                    <strong>{PHONE_DISPLAY}</strong>.
+                    متخصصون في إصلاح أعطال ضعف النار، كسر المفصلات، أو عطل مروحة
+                    التبريد، مع فحص دائرة الأمان لتجنب أي مخاطر. للحجز اتصل
+                    فوراً على <strong>{PHONE_DISPLAY}</strong>.
                   </div>
                 </div>
               </div>
@@ -561,13 +601,19 @@ const OvenElbaAr = () => {
                 <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">
                   <div className="p-4 md:p-5">
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <p className="text-sm text-muted-foreground font-cairo">أعطال شائعة</p>
+                      <p className="text-sm text-muted-foreground font-cairo">
+                        أعطال شائعة
+                      </p>
                       <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium font-cairo">
                         فحص أمان
                       </span>
                     </div>
 
-                    <img src={ovenImg} alt="أعطال فرن البا" className="w-full rounded-xl shadow-sm object-cover" />
+                    <img
+                      src={ovenImg}
+                      alt="أعطال فرن البا"
+                      className="w-full rounded-xl shadow-sm object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -580,8 +626,9 @@ const OvenElbaAr = () => {
                     هل توفرون قطع غيار افران البا الأصلية في التوكيل؟
                   </h2>
                   <div className="text-muted-foreground leading-relaxed">
-                    نعم، نوفر قطع غيار أصلية مستوردة مثل زجاج الفرن الحراري، المفصلات، وسخانات الكهرباء بمختلف القدرات.
-                    تركيب القطع الأصلية من خلال{" "}
+                    نعم، نوفر قطع غيار أصلية مستوردة مثل زجاج الفرن الحراري،
+                    المفصلات، وسخانات الكهرباء بمختلف القدرات. تركيب القطع
+                    الأصلية من خلال{" "}
                     <a
                       href={BRAND_URL}
                       target="_blank"
@@ -590,8 +637,8 @@ const OvenElbaAr = () => {
                     >
                       الشركة الأمريكية جروب
                     </a>{" "}
-                    يطيل عمر الجهاز ويمنع تكرار الأعطال، مع ضمان معتمد على كل قطعة. اطلب الآن على{" "}
-                    <strong>{PHONE_DISPLAY}</strong>.
+                    يطيل عمر الجهاز ويمنع تكرار الأعطال، مع ضمان معتمد على كل
+                    قطعة. اطلب الآن على <strong>{PHONE_DISPLAY}</strong>.
                   </div>
                 </div>
               </div>
@@ -600,13 +647,19 @@ const OvenElbaAr = () => {
                 <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">
                   <div className="p-4 md:p-5">
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <p className="text-sm text-muted-foreground font-cairo">قطع غيار أصلية</p>
+                      <p className="text-sm text-muted-foreground font-cairo">
+                        قطع غيار أصلية
+                      </p>
                       <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium font-cairo">
                         ضمان معتمد
                       </span>
                     </div>
 
-                    <img src={ovenImg} alt="قطع غيار افران البا" className="w-full rounded-xl shadow-sm object-cover" />
+                    <img
+                      src={ovenImg}
+                      alt="قطع غيار افران البا"
+                      className="w-full rounded-xl shadow-sm object-cover"
+                    />
                   </div>
                 </div>
               </div>

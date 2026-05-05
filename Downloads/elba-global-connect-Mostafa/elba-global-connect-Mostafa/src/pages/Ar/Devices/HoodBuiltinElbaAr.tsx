@@ -280,7 +280,7 @@ const HoodBuiltinElbaAr = () => {
                 خدمات عند المنزل
               </p>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight lg:leading-[5rem]">
                 {introH1}
               </h1>
 
@@ -318,7 +318,7 @@ const HoodBuiltinElbaAr = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
+                    className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
                   >
                     <Phone className="w-5 h-5" />
                     اتصال

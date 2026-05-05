@@ -42,7 +42,7 @@ const OvenBuiltinElbaAr = () => {
       "لو التسخين ضعيف، غالباً الترموستات أو السخان يحتاج فحص.",
       "لا تغطي فتحات التهوية للحفاظ على ثبات أداء مروحة التبريد.",
     ],
-    []
+    [],
   );
 
   const faqs = useMemo(
@@ -56,7 +56,12 @@ const OvenBuiltinElbaAr = () => {
               {PHONE_DISPLAY}
             </a>{" "}
             للتواصل مع{" "}
-            <a className={LINK_CLASS} href={BRAND_URL} target="_blank" rel="noreferrer">
+            <a
+              className={LINK_CLASS}
+              href={BRAND_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
               الشركة الأمريكية جروب
             </a>{" "}
             وحجز صيانة منزلية فورية لفرن إلبا بلت إن مع قطع غيار أصلية وضمان.
@@ -81,8 +86,14 @@ const OvenBuiltinElbaAr = () => {
         q: "منين أجيب قطع غيار فرن إلبا الأصلية؟",
         a: (
           <p>
-            قطع الغيار الأصلية مثل المفصلات والزجاج الحراري وقطع الإشعال متاحة عبر{" "}
-            <a className={LINK_CLASS} href={BRAND_URL} target="_blank" rel="noreferrer">
+            قطع الغيار الأصلية مثل المفصلات والزجاج الحراري وقطع الإشعال متاحة
+            عبر{" "}
+            <a
+              className={LINK_CLASS}
+              href={BRAND_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
               الأمريكية جروب
             </a>
             . اطلب القطعة أو التركيب عبر{" "}
@@ -160,8 +171,8 @@ const OvenBuiltinElbaAr = () => {
         q: "هل الصيانة عليها ضمان؟",
         a: (
           <p>
-            نعم، كل صيانة تشمل <strong>ضمان مكتوب</strong> على قطع الغيار والمصنعية.
-            احجز عبر{" "}
+            نعم، كل صيانة تشمل <strong>ضمان مكتوب</strong> على قطع الغيار
+            والمصنعية. احجز عبر{" "}
             <a className={LINK_CLASS} href={`tel:${PHONE_TEL}`}>
               {PHONE_DISPLAY}
             </a>
@@ -197,7 +208,7 @@ const OvenBuiltinElbaAr = () => {
         aText: `بنغطي أغلب المناطق بخدمة متنقلة. اتصل على ${PHONE_DISPLAY} ونوصلك في البيت بدون نقل الجهاز.`,
       },
     ],
-    []
+    [],
   );
 
   const schemas = useMemo(() => {
@@ -243,11 +254,23 @@ const OvenBuiltinElbaAr = () => {
 
   const steps = useMemo(
     () => [
-      { num: "01", title: "طلب صيانة", desc: "سجّل طلبك وحدد أفضل وقت لزيارة الفني." },
-      { num: "02", title: "زيارة الفني", desc: "فني متخصص يصل ومعه الأدوات وقطع الغيار المطلوبة." },
-      { num: "03", title: "إصلاح وضمان", desc: "إصلاح شامل + ضمان على الخدمة وقطع الغيار." },
+      {
+        num: "01",
+        title: "طلب صيانة",
+        desc: "سجّل طلبك وحدد أفضل وقت لزيارة الفني.",
+      },
+      {
+        num: "02",
+        title: "زيارة الفني",
+        desc: "فني متخصص يصل ومعه الأدوات وقطع الغيار المطلوبة.",
+      },
+      {
+        num: "03",
+        title: "إصلاح وضمان",
+        desc: "إصلاح شامل + ضمان على الخدمة وقطع الغيار.",
+      },
     ],
-    []
+    [],
   );
 
   return (
@@ -273,9 +296,16 @@ const OvenBuiltinElbaAr = () => {
 
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white z-10 px-4">
-            <p className="text-sm md:text-base text-white/70 mb-2">خدمة منزلية</p>
+            <p className="text-sm md:text-base text-white/70 mb-2">
+              خدمة منزلية
+            </p>
 
-            <h1 className={cn("text-3xl md:text-5xl lg:text-6xl font-bold mb-4", "font-cairo")}>
+            <h1
+              className={cn(
+                "text-3xl md:text-5xl lg:text-6xl font-bold mb-4 lg:leading-[5rem]",
+                "font-cairo",
+              )}
+            >
               {h1}
             </h1>
 
@@ -292,7 +322,11 @@ const OvenBuiltinElbaAr = () => {
                 اطلب صيانة
               </Button>
 
-              <a href={`https://wa.me/${WHATSAPP_WA}`} target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://wa.me/${WHATSAPP_WA}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   variant="outline"
@@ -307,7 +341,7 @@ const OvenBuiltinElbaAr = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-foreground gap-2 text-lg px-8 w-full sm:w-auto"
+                  className="border-white text-black hover:bg-white hover:text-foreground gap-2 text-lg px-8 w-full sm:w-auto"
                 >
                   <Phone className="w-5 h-5" />
                   اتصال
@@ -316,7 +350,8 @@ const OvenBuiltinElbaAr = () => {
             </div>
 
             <div className="mt-4 text-sm text-white/70">
-              رقم الخدمة: <span className="font-semibold text-white">{PHONE_DISPLAY}</span>
+              رقم الخدمة:{" "}
+              <span className="font-semibold text-white">{PHONE_DISPLAY}</span>
             </div>
           </div>
         </div>
@@ -325,7 +360,12 @@ const OvenBuiltinElbaAr = () => {
       {/* Steps */}
       <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className={cn("text-2xl md:text-3xl font-bold text-center mb-12 text-foreground", "font-cairo")}>
+          <h2
+            className={cn(
+              "text-2xl md:text-3xl font-bold text-center mb-12 text-foreground",
+              "font-cairo",
+            )}
+          >
             خطوات الخدمة
           </h2>
 
@@ -337,9 +377,16 @@ const OvenBuiltinElbaAr = () => {
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <div className="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-primary font-bold text-xl">{step.num}</span>
+                  <span className="text-primary font-bold text-xl">
+                    {step.num}
+                  </span>
                 </div>
-                <h3 className={cn("font-bold text-lg mb-2 text-foreground", "font-cairo")}>
+                <h3
+                  className={cn(
+                    "font-bold text-lg mb-2 text-foreground",
+                    "font-cairo",
+                  )}
+                >
                   {step.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">{step.desc}</p>
@@ -352,7 +399,12 @@ const OvenBuiltinElbaAr = () => {
       {/* Content */}
       <section className="py-16 md:py-20 bg-secondary">
         <div className="container mx-auto px-4">
-          <h2 className={cn("text-2xl md:text-3xl font-bold text-center mb-12 text-foreground", "font-cairo")}>
+          <h2
+            className={cn(
+              "text-2xl md:text-3xl font-bold text-center mb-12 text-foreground",
+              "font-cairo",
+            )}
+          >
             خدمة صيانة فرن إلبا بلت إن
           </h2>
 
@@ -363,75 +415,118 @@ const OvenBuiltinElbaAr = () => {
                   صيانة أعطال الفرن
                 </div>
 
-                <img src={ovenImg} alt="فرن إلبا بلت إن" className="w-full h-auto rounded-xl shadow-lg" />
+                <img
+                  src={ovenImg}
+                  alt="فرن إلبا بلت إن"
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
 
                 <div className="flex gap-1 mt-4 justify-center">
                   {[1, 2, 3].map((i) => (
-                    <span key={i} className="text-yellow-500 text-xl">★</span>
+                    <span key={i} className="text-yellow-500 text-xl">
+                      ★
+                    </span>
                   ))}
                 </div>
 
-                <p className="text-center text-sm text-muted-foreground mt-1">{DOMAIN}</p>
+                <p className="text-center text-sm text-muted-foreground mt-1">
+                  {DOMAIN}
+                </p>
               </div>
             </div>
 
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <div
+              className="animate-fade-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
               <div className="space-y-8">
                 <div>
-                  <h3 className={cn("text-xl md:text-2xl font-bold mb-3 text-foreground", "font-cairo")}>
+                  <h3
+                    className={cn(
+                      "text-xl md:text-2xl font-bold mb-3 text-foreground",
+                      "font-cairo",
+                    )}
+                  >
                     لماذا تختارنا لـ صيانة فرن إلبا بلت إن؟
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    إلبا ماركة إيطالية معروفة بجودة أجهزة المطبخ، لكن حتى أفضل الأجهزة تحتاج صيانة دورية.
-                    نحن نقدم صيانة فرن إلبا بلت إن داخل مصر من خلال مهندسين متخصصين في التكنولوجيا الإيطالية،
-                    مع قطع غيار أصلية وسرعة استجابة عالية عبر الشركة الأمريكية جروب. اتصل الآن على {PHONE_DISPLAY}
+                    إلبا ماركة إيطالية معروفة بجودة أجهزة المطبخ، لكن حتى أفضل
+                    الأجهزة تحتاج صيانة دورية. نحن نقدم صيانة فرن إلبا بلت إن
+                    داخل مصر من خلال مهندسين متخصصين في التكنولوجيا الإيطالية،
+                    مع قطع غيار أصلية وسرعة استجابة عالية عبر الشركة الأمريكية
+                    جروب. اتصل الآن على {PHONE_DISPLAY}
                     واحجز زيارة منزلية آمنة.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className={cn("text-xl md:text-2xl font-bold mb-3 text-foreground", "font-cairo")}>
+                  <h3
+                    className={cn(
+                      "text-xl md:text-2xl font-bold mb-3 text-foreground",
+                      "font-cairo",
+                    )}
+                  >
                     هل تحتاج فني صيانة فرن إلبا بلت إن قريب منك في القاهرة؟
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    لو أنت في القاهرة وتحتاج سرعة ودقة، نقدر نوصلك فني متخصص في نفس اليوم.
-                    نوفر صيانة منزلية فورية بدون نقل الجهاز أو التأثير على دواليب المطبخ.
-                    فريقنا يستخدم أدوات فحص رقمية لتحديد أعطال الحساسات والترموستات بدقة.
-                    اتصل على {PHONE_DISPLAY} أو راسلنا واتساب.
+                    لو أنت في القاهرة وتحتاج سرعة ودقة، نقدر نوصلك فني متخصص في
+                    نفس اليوم. نوفر صيانة منزلية فورية بدون نقل الجهاز أو
+                    التأثير على دواليب المطبخ. فريقنا يستخدم أدوات فحص رقمية
+                    لتحديد أعطال الحساسات والترموستات بدقة. اتصل على{" "}
+                    {PHONE_DISPLAY} أو راسلنا واتساب.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className={cn("text-xl md:text-2xl font-bold mb-3 text-foreground", "font-cairo")}>
+                  <h3
+                    className={cn(
+                      "text-xl md:text-2xl font-bold mb-3 text-foreground",
+                      "font-cairo",
+                    )}
+                  >
                     أشهر أعطال فرن إلبا بلت إن وكيف نصلحها
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     أسئلة كتير بتتكرر: ليه الفرن مش بيسخن؟ ليه الشعلة بتطفى؟
-                    غالباً السبب بيكون حساس حراري، ترموستات، سخان، مشكلة إشعال، أو انسداد بالفونيات.
-                    بنعمل معايرة للحرارة، إصلاح أعطال المروحة، تغيير مفصلات، وفحص كامل لدائرة الأمان
-                    لتجنب تسريب الغاز وحماية بيتك. اتصل فوراً على {PHONE_DISPLAY}.
+                    غالباً السبب بيكون حساس حراري، ترموستات، سخان، مشكلة إشعال،
+                    أو انسداد بالفونيات. بنعمل معايرة للحرارة، إصلاح أعطال
+                    المروحة، تغيير مفصلات، وفحص كامل لدائرة الأمان لتجنب تسريب
+                    الغاز وحماية بيتك. اتصل فوراً على {PHONE_DISPLAY}.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className={cn("text-xl md:text-2xl font-bold mb-3 text-foreground", "font-cairo")}>
+                  <h3
+                    className={cn(
+                      "text-xl md:text-2xl font-bold mb-3 text-foreground",
+                      "font-cairo",
+                    )}
+                  >
                     قطع غيار أصلية وضمان معتمد
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     متوفر لدينا مخزون من قطع الغيار الأصلية الخاصة بأفران إلبا:
-                    زجاج حراري، مفصلات، قطع إشعال، سخانات، ترموستات وغيرها.
-                    كل قطعة يتم تركيبها معها ضمان مكتوب. لو محتاج قطعة غيار أو تركيب بالمنزل
-                    اتصل على {PHONE_DISPLAY}.
+                    زجاج حراري، مفصلات، قطع إشعال، سخانات، ترموستات وغيرها. كل
+                    قطعة يتم تركيبها معها ضمان مكتوب. لو محتاج قطعة غيار أو
+                    تركيب بالمنزل اتصل على {PHONE_DISPLAY}.
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-4 mt-10">
-                <Button size="lg" onClick={() => setIsServicePopupOpen(true)} className="bg-primary hover:bg-primary/90 gap-2">
+                <Button
+                  size="lg"
+                  onClick={() => setIsServicePopupOpen(true)}
+                  className="bg-primary hover:bg-primary/90 gap-2"
+                >
                   اطلب صيانة
                 </Button>
 
-                <a href={`https://wa.me/${WHATSAPP_WA}`} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={`https://wa.me/${WHATSAPP_WA}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button size="lg" variant="outline" className="gap-2">
                     <MessageCircle className="w-5 h-5" />
                     واتساب
@@ -454,7 +549,12 @@ const OvenBuiltinElbaAr = () => {
       <section className="py-16 md:py-20 bg-gradient-to-r from-foreground to-foreground/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-card rounded-2xl p-8 md:p-12 shadow-xl">
-            <h2 className={cn("text-xl md:text-2xl font-bold mb-6 text-foreground flex items-center gap-2", "font-cairo")}>
+            <h2
+              className={cn(
+                "text-xl md:text-2xl font-bold mb-6 text-foreground flex items-center gap-2",
+                "font-cairo",
+              )}
+            >
               نصائح للحفاظ على الفرن
             </h2>
 
@@ -467,14 +567,24 @@ const OvenBuiltinElbaAr = () => {
               ))}
             </ul>
 
-            <p className="text-muted-foreground mb-6 font-medium">محتاج مساعدة؟ اطلب الصيانة الآن.</p>
+            <p className="text-muted-foreground mb-6 font-medium">
+              محتاج مساعدة؟ اطلب الصيانة الآن.
+            </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" onClick={() => setIsServicePopupOpen(true)} className="bg-primary hover:bg-primary/90 gap-2">
+              <Button
+                size="lg"
+                onClick={() => setIsServicePopupOpen(true)}
+                className="bg-primary hover:bg-primary/90 gap-2"
+              >
                 اطلب صيانة
               </Button>
 
-              <a href={`https://wa.me/${WHATSAPP_WA}`} target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://wa.me/${WHATSAPP_WA}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="lg" variant="outline" className="gap-2">
                   <MessageCircle className="w-5 h-5" />
                   واتساب
@@ -490,10 +600,17 @@ const OvenBuiltinElbaAr = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className={cn("text-2xl md:text-3xl font-bold text-foreground mb-2", "font-cairo")}>
+              <h2
+                className={cn(
+                  "text-2xl md:text-3xl font-bold text-foreground mb-2",
+                  "font-cairo",
+                )}
+              >
                 الأسئلة الشائعة
               </h2>
-              <p className="text-muted-foreground">إجابات أهم الأسئلة المتكررة.</p>
+              <p className="text-muted-foreground">
+                إجابات أهم الأسئلة المتكررة.
+              </p>
             </div>
 
             <Accordion type="single" collapsible className="space-y-3">
@@ -503,7 +620,12 @@ const OvenBuiltinElbaAr = () => {
                   value={`faq-${index}`}
                   className="bg-card rounded-xl border-none shadow-sm px-6"
                 >
-                  <AccordionTrigger className={cn("text-foreground font-medium hover:no-underline text-right", "font-cairo")}>
+                  <AccordionTrigger
+                    className={cn(
+                      "text-foreground font-medium hover:no-underline text-right",
+                      "font-cairo",
+                    )}
+                  >
                     {faq.q}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed text-right">

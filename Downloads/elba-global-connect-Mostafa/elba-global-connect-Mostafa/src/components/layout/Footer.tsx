@@ -14,7 +14,7 @@ const Footer = () => {
     { path: localePath("/"), label: t("nav.home") },
     { path: localePath("/devices"), label: t("nav.devices") },
     { path: localePath("/blog"), label: t("nav.blog") },
-    { path: localePath("/contact"), label: t("nav.contact") },
+    { path: localePath("/elba-hotline"), label: t("nav.contact") },
   ];
 
   const legalLinks = [

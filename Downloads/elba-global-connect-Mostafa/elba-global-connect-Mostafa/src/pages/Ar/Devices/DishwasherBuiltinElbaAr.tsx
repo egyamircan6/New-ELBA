@@ -22,8 +22,7 @@ const DOMAIN = "https://elba-eg.com";
 const PAGE_URL = "https://alba-eg.com/صيانة-غسالة-اطباق-البا-بلت-ان";
 const SITE_URL = "https://alba-eg.com/";
 
-const LINK_CLASS =
-  "text-primary underline font-semibold hover:text-primary/80";
+const LINK_CLASS = "text-primary underline font-semibold hover:text-primary/80";
 
 type FaqItemType = {
   q: string;
@@ -123,8 +122,8 @@ const DishwasherBuiltinElbaAr = () => {
         q: "ما هو حل مشكلة غسالة اطباق البا لا تصرف المياه؟",
         a: (
           <p>
-            السبب غالباً انسداد في الفلتر أو عطل في طلمبة الطرد. تواصل معنا
-            لحجز زيارة منزلية عبر{" "}
+            السبب غالباً انسداد في الفلتر أو عطل في طلمبة الطرد. تواصل معنا لحجز
+            زيارة منزلية عبر{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               <strong>{PHONE_DISPLAY}</strong>
             </a>
@@ -177,7 +176,7 @@ const DishwasherBuiltinElbaAr = () => {
         aText: `أكواد الأعطال مثل E1 أو E4 تشير لعطل محدد مثل ضعف السحب أو الفيضان. اتصل ${PHONE_DISPLAY} لمعرفة معنى الكود وطريقة المعالجة الصحيحة.`,
       },
     ],
-    []
+    [],
   );
 
   const schemaGraph = useMemo(() => {
@@ -304,7 +303,7 @@ const DishwasherBuiltinElbaAr = () => {
         <div className="absolute inset-0">
           <div className="container mx-auto px-4 h-full flex items-center justify-center">
             <div className="text-center text-white z-10 max-w-3xl">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 font-cairo leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 font-cairo leading-tight lg:leading-[4rem]">
                 صيانة غسالات اطباق البا بلت ان في مصر
               </h1>
 
@@ -342,7 +341,7 @@ const DishwasherBuiltinElbaAr = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
+                    className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                   >
                     <Phone className="w-5 h-5" />
                     {PHONE_DISPLAY}
@@ -352,7 +351,9 @@ const DishwasherBuiltinElbaAr = () => {
 
               <div className="mt-6 text-sm text-white/70 font-cairo">
                 رقم الصيانة:{" "}
-                <span className="font-semibold text-white">{PHONE_DISPLAY}</span>
+                <span className="font-semibold text-white">
+                  {PHONE_DISPLAY}
+                </span>
               </div>
             </div>
           </div>
@@ -489,9 +490,9 @@ const DishwasherBuiltinElbaAr = () => {
                     صيانة منزلية بدون فك المطبخ لوحدات الـ Built-in
                   </h2>
                   <p className="text-muted-foreground leading-relaxed font-cairo">
-                    نوفر معدات سحب وتركيب مخصصة للأجهزة Built-in للحفاظ على وحدات
-                    الخشب والرخام. سواء المشكلة في السحب أو الطرد أو التسخين،
-                    نصل إليك بورشة متنقلة مجهزة. للحجز اتصل على{" "}
+                    نوفر معدات سحب وتركيب مخصصة للأجهزة Built-in للحفاظ على
+                    وحدات الخشب والرخام. سواء المشكلة في السحب أو الطرد أو
+                    التسخين، نصل إليك بورشة متنقلة مجهزة. للحجز اتصل على{" "}
                     <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
                       {PHONE_DISPLAY}
                     </a>

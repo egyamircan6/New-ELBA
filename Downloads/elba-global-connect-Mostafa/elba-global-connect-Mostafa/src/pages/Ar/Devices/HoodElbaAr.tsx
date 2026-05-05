@@ -23,8 +23,7 @@ const SITE_URL = "https://alba-eg.com/";
 const PAGE_URL = "https://alba-eg.com/صيانة-شفاط-البا";
 const BRAND_URL = "https://americangroup-eg.com/";
 
-const LINK_CLASS =
-  "text-blue-600 underline font-semibold hover:text-blue-700";
+const LINK_CLASS = "text-blue-600 underline font-semibold hover:text-blue-700";
 
 const HoodElbaAr = () => {
   const [isServicePopupOpen, setIsServicePopupOpen] = useState(false);
@@ -45,8 +44,8 @@ const HoodElbaAr = () => {
               {PHONE_DISPLAY}
             </a>
             . تقدم <strong>الامريكية جروب</strong> خدمة دعم فني فورية لإصلاح
-            كافة أعطال الشفاطات الإيطالية بالمنزل، مع توفير قطع غيار أصلية
-            بضمان حقيقي لضمان استعادة كفاءة الجهاز.
+            كافة أعطال الشفاطات الإيطالية بالمنزل، مع توفير قطع غيار أصلية بضمان
+            حقيقي لضمان استعادة كفاءة الجهاز.
           </p>
         ),
         aText: `يمكنك التواصل مع مركز صيانة شفاط البا المعتمد عبر الرقم ${PHONE_DISPLAY} لحجز صيانة منزلية فورية بقطع غيار أصلية وضمان معتمد.`,
@@ -122,7 +121,7 @@ const HoodElbaAr = () => {
         aText: `يمكنك حجز موعد صيانة شفاط البا عبر الاتصال على ${PHONE_DISPLAY} أو التواصل عبر واتساب على نفس الرقم لتحديد موعد مناسب لزيارة الفني.`,
       },
     ],
-    []
+    [],
   );
 
   const schemaGraph = useMemo(() => {
@@ -246,7 +245,7 @@ const HoodElbaAr = () => {
                 خدمة منزلية
               </p>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight lg:leading-[5rem]">
                 {introH1}
               </h1>
 
@@ -283,7 +282,7 @@ const HoodElbaAr = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
+                    className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full"
                   >
                     <Phone className="w-5 h-5" />
                     اتصال
@@ -408,13 +407,13 @@ const HoodElbaAr = () => {
                     خدمة عملاء صيانة شفاط البا: الدعم الفني المباشر
                   </h2>
                   <div className="text-muted-foreground leading-relaxed">
-                    يتيح لك قسم خدمة عملاء البا التواصل المباشر مع خبراء
-                    متخصصين للإجابة على كافة استفساراتكم التقنية. سواء كنت تسأل
-                    عن طريقة تنظيف شفاط Elba أو تواجه مشكلة في لوحة التحكم، فإن
-                    فريق الدعم الفني جاهز لتقديم الحلول الفورية. هدفنا هو تقديم
-                    تجربة مستخدم سلسة تبدأ من مكالمتك الأولى وحتى إتمام عملية
-                    إصلاح الشفاط، مع تقديم نصائح وقائية للحفاظ على قوة الموتور
-                    وفلاتر الكربون من التلف السريع.
+                    يتيح لك قسم خدمة عملاء البا التواصل المباشر مع خبراء متخصصين
+                    للإجابة على كافة استفساراتكم التقنية. سواء كنت تسأل عن طريقة
+                    تنظيف شفاط Elba أو تواجه مشكلة في لوحة التحكم، فإن فريق
+                    الدعم الفني جاهز لتقديم الحلول الفورية. هدفنا هو تقديم تجربة
+                    مستخدم سلسة تبدأ من مكالمتك الأولى وحتى إتمام عملية إصلاح
+                    الشفاط، مع تقديم نصائح وقائية للحفاظ على قوة الموتور وفلاتر
+                    الكربون من التلف السريع.
                   </div>
                 </div>
               </div>
@@ -453,9 +452,9 @@ const HoodElbaAr = () => {
                     مثل المعادي والتجمع ومدينة نصر والشيخ زايد وغيرها. بمجرد
                     اتصالك على رقم صيانة شفاطات البا{" "}
                     <strong>{PHONE_DISPLAY}</strong>، يتم توجيه أقرب سيارة مجهزة
-                    بقطع الغيار الأصلية إلى موقعك. نحن نلتزم بمواعيد دقيقة
-                    لضمان عدم تعطيل يومك، مع توفير تغطية شاملة لجميع موديلات
-                    شفاطات البا سواء المسطحة أو الهرمية.
+                    بقطع الغيار الأصلية إلى موقعك. نحن نلتزم بمواعيد دقيقة لضمان
+                    عدم تعطيل يومك، مع توفير تغطية شاملة لجميع موديلات شفاطات
+                    البا سواء المسطحة أو الهرمية.
                   </div>
                 </div>
               </div>

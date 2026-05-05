@@ -41,9 +41,11 @@ const translations: Record<Language, Record<string, string>> = {
     "services.subtitle":
       "Comprehensive maintenance solutions for your Elba appliances",
     "services.repair.title": "Repair Services",
-    "services.repair.desc": "Fast and reliable repairs for all Elba appliance issues",
+    "services.repair.desc":
+      "Fast and reliable repairs for all Elba appliance issues",
     "services.installation.title": "Installation",
-    "services.installation.desc": "Professional installation of new Elba appliances",
+    "services.installation.desc":
+      "Professional installation of new Elba appliances",
     "services.maintenance.title": "Maintenance",
     "services.maintenance.desc":
       "Regular maintenance to keep your appliances running smoothly",
@@ -161,7 +163,8 @@ const translations: Record<Language, Record<string, string>> = {
     "device.tips.cta":
       "If you face any problem, contact us and our team will help you right away.",
     "device.faq.title": "Frequently Asked Questions",
-    "device.faq.subtitle": "Here are the most common questions from our customers",
+    "device.faq.subtitle":
+      "Here are the most common questions from our customers",
   },
 
   ar: {
@@ -175,7 +178,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Section
     "hero.title": "صيانة أجهزة إلبا المحترفة",
-    "hero.subtitle": "خدمات إصلاح وصيانة متخصصة لجميع بوتاجازات وأفران وشفاطات إلبا",
+    "hero.subtitle":
+      "خدمات إصلاح وصيانة متخصصة لجميع بوتاجازات وأفران وشفاطات إلبا",
     "hero.cta.request": "اطلب الخدمة",
     "hero.cta.call": "اتصل الآن",
 
@@ -250,17 +254,21 @@ const translations: Record<Language, Record<string, string>> = {
     "device.steps.1.title": "اتصل بنا أو أرسل طلبك",
     "device.steps.1.desc": "على الرقم أو عبر الواتساب/نموذج الموقع",
     "device.steps.2.title": "تحديد الموعد والزيارة",
-    "device.steps.2.desc": "ننسق أقرب وقت ونرسل فني متنقل مكون من الأدوات وقطع الغيار",
+    "device.steps.2.desc":
+      "ننسق أقرب وقت ونرسل فني متنقل مكون من الأدوات وقطع الغيار",
     "device.steps.3.title": "إصلاح واختبار الجهاز",
     "device.steps.3.desc": "نعمل صيانة وتسلمات ضمان الخدمة مكتوب على الجهاز",
     "device.tips.title": "نصائح للحفاظ على",
-    "device.tips.cta": "لو واجهتك أي مشكلة متواجدين نتكلمها، و فريقنا هيجيلك عالطول.",
+    "device.tips.cta":
+      "لو واجهتك أي مشكلة متواجدين نتكلمها، و فريقنا هيجيلك عالطول.",
     "device.faq.title": "الأسئلة الشائعة",
     "device.faq.subtitle": "هنا جمعنالك أكتر الأسئلة اللي بيكررها عملائنا",
   },
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined,
+);
 
 /**
  * Map AR route slugs <-> EN route slugs
@@ -270,25 +278,27 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const ROUTE_MAP_AR_TO_EN: Record<string, string> = {
   "صيانة-اجهزة-البا": "device",
 
-  "صيانة-شفاط-البا": "hood",
-  "صيانة-شفاط-البا-بلت-ان": "hood-builtin",
+  "صيانة-شفاط-البا": "elba-hood-maintenance",
+  "صيانة-شفاط-البا-بلت-ان": "elba-built-in-hood-repair",
 
-  "صيانة-بوتاجاز-البا": "cooker",
-  "صيانة-بوتاجاز-البا-بلت-ان": "cooker-builtin",
+  "صيانة-بوتاجاز-البا": "elba-cooker-maintenance",
+  "صيانة-بوتاجاز-البا-بلت-ان": "elba-built-in-cooker-repair",
 
-  "صيانة-فرن-البا": "oven",
-  "صيانة-فرن-البا-بلت-ان": "oven-builtin",
+  "صيانة-فرن-البا": "elba-oven-maintenance",
+  "صيانة-فرن-البا-بلت-ان": "elba-built-in-oven-repair",
 
-  "صيانة-غسالة-اطباق-البا": "dishwasher",
-  "صيانة-غسالة-اطباق-البا-بلت-ان": "dishwasher-builtin",
+  "صيانة-غسالة-اطباق-البا": "elba-dishwasher-repair",
+  "صيانة-غسالة-اطباق-البا-بلت-ان": "elba-built-in-dishwasher-repair",
 };
 
 const ROUTE_MAP_EN_TO_AR: Record<string, string> = Object.fromEntries(
-  Object.entries(ROUTE_MAP_AR_TO_EN).map(([ar, en]) => [en, ar])
+  Object.entries(ROUTE_MAP_AR_TO_EN).map(([ar, en]) => [en, ar]),
 );
 
 // Inner provider that has access to router
-const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) => {
+const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const params = useParams<{ lang?: string }>();
@@ -360,7 +370,7 @@ const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) 
     (key: string): string => {
       return translations[language][key] || key;
     },
-    [language]
+    [language],
   );
 
   const localePath = useCallback(
@@ -368,7 +378,7 @@ const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) 
       const cleanPath = path.startsWith("/") ? path : `/${path}`;
       return `/${language}${cleanPath}`;
     },
-    [language]
+    [language],
   );
 
   const isRTL = language === "ar";
@@ -379,14 +389,18 @@ const LanguageProviderInner: React.FC<{ children: ReactNode }> = ({ children }) 
   }, [language, isRTL]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t, isRTL, localePath }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage, toggleLanguage, t, isRTL, localePath }}
+    >
       {children}
     </LanguageContext.Provider>
   );
 };
 
 // Outer provider
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   return <LanguageProviderInner>{children}</LanguageProviderInner>;
 };
 

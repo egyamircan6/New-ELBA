@@ -14,8 +14,10 @@ import { cn } from "@/lib/utils";
 
 import { useBlogArticles } from "@/pages/Blog/hooks/useBlogArticles";
 
-const BASE_IMAGE = "https://rdtfhjguho8.american-softwares.com/storage/";
-const getImage = (img?: string) => (!img ? "" : img.startsWith("http") ? img : BASE_IMAGE + img);
+const BASE_IMAGE = "https://backs.seoi.ai.com/storage/";
+
+const getImage = (img?: string) =>
+  !img ? "" : img.startsWith("http") ? img : BASE_IMAGE + img;
 
 const BlogPageContent = () => {
   const { t, isRTL, language } = useLanguage();
@@ -38,11 +40,27 @@ const BlogPageContent = () => {
   const listPath = isRTL ? "/المدونة" : "/blog";
   const postPath = (slug?: string) => {
     if (!slug) return listPath;
-    return isRTL ? `/المدونة/${slug}` : `/blog/${slug}`;
+    return isRTL ? `/المدونة/${slug}` : `/en/blog/${slug}`;
   };
+  // ✅ يتحقق هل النص عربي
+  const isArabicText = (text?: string) => {
+    if (!text) return false;
+    return /[\u0600-\u06FF]/.test(text);
+  };
+  const filteredArticles = articles.filter((article) => {
+    const slug = article?.meta?.slug || article?.slug || "";
+    const isArabicSlug = isArabicText(slug);
 
-  const featured = useMemo(() => (articles.length ? articles[0] : null), [articles]);
-  const rest = useMemo(() => (articles.length > 1 ? articles.slice(1) : []), [articles]);
+    return isRTL ? isArabicSlug : !isArabicSlug;
+  });
+  const featured = useMemo(
+    () => (filteredArticles.length ? filteredArticles[0] : null),
+    [filteredArticles],
+  );
+  const rest = useMemo(
+    () => (filteredArticles.length > 1 ? filteredArticles.slice(1) : []),
+    [filteredArticles],
+  );
 
   return (
     <div className="min-h-screen bg-background" dir={isRTL ? "rtl" : "ltr"}>
@@ -53,7 +71,11 @@ const BlogPageContent = () => {
       </Helmet>
 
       <SEOHead
-        title={language === "ar" ? "مدونة صيانة إلبا - نصائح ومقالات" : "Elba Maintenance Blog - Tips & Articles"}
+        title={
+          language === "ar"
+            ? "مدونة صيانة إلبا - نصائح ومقالات"
+            : "Elba Maintenance Blog - Tips & Articles"
+        }
         description={
           language === "ar"
             ? "نصائح ومقالات متخصصة في صيانة أجهزة إلبا. تعلم كيفية الحفاظ على أجهزتك."
@@ -67,7 +89,7 @@ const BlogPageContent = () => {
           <h1
             className={cn(
               "text-4xl md:text-5xl font-bold mb-4 text-foreground",
-              isRTL ? "font-cairo" : "font-sans"
+              isRTL ? "font-cairo" : "font-sans",
             )}
           >
             {t("blog.title")}
@@ -81,23 +103,29 @@ const BlogPageContent = () => {
       {/* ✅ Loading / Error */}
       {isLoading && (
         <section className="py-12 md:py-20 bg-background">
-          <div className="container mx-auto px-4 text-center text-muted-foreground">Loading...</div>
+          <div className="container mx-auto px-4 text-center text-muted-foreground">
+            Loading...
+          </div>
         </section>
       )}
 
-      {isError && (
+      {(isError ) && (
         <section className="py-12 md:py-20 bg-background">
-          <div className="container mx-auto px-4 text-center text-muted-foreground">Failed to load articles</div>
+          <div className="container mx-auto px-4 text-center text-muted-foreground">
+            Failed to load articles
+          </div>
         </section>
       )}
 
       {/* ✅ Content */}
       {!isLoading && !isError && (
         <>
-          {!articles.length && (
+          {!filteredArticles.length && (
             <section className="py-12 md:py-20 bg-background">
               <div className="container mx-auto px-4 text-center text-muted-foreground">
-                {language === "ar" ? "لا توجد مقالات حالياً" : "No articles yet"}
+                {language === "ar"
+                  ? "لا توجد مقالات حالياً"
+                  : "No articles yet"}
               </div>
             </section>
           )}
@@ -111,7 +139,7 @@ const BlogPageContent = () => {
                     <div className="grid lg:grid-cols-2">
                       <div className="aspect-video lg:aspect-auto overflow-hidden bg-secondary">
                         <img
-                          src={getImage(featured?.main_image || featured?.image_url || featured?.featured_image)}
+                          src={`https://backs.seoi.ai/storage/${featured?.main_image || featured?.image_url || featured?.featured_image}`}
                           alt={featured?.title || ""}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           loading="lazy"
@@ -122,7 +150,8 @@ const BlogPageContent = () => {
                         <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                           <Badge variant="secondary" className="gap-1">
                             <Tag className="w-3 h-3" />
-                            {featured?.category_name || (isRTL ? "مقالات" : "Articles")}
+                            {featured?.category_name ||
+                              (isRTL ? "مقالات" : "Articles")}
                           </Badge>
 
                           {!!featured?.created_at && (
@@ -143,7 +172,7 @@ const BlogPageContent = () => {
                         <h2
                           className={cn(
                             "text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors",
-                            isRTL ? "font-cairo" : "font-sans"
+                            isRTL ? "font-cairo" : "font-sans",
                           )}
                         >
                           {featured?.title || ""}
@@ -151,11 +180,15 @@ const BlogPageContent = () => {
 
                         <div
                           className="text-muted-foreground"
-                          dangerouslySetInnerHTML={{ __html: featured?.excerpt_html || "" }}
+                          dangerouslySetInnerHTML={{
+                            __html: featured?.excerpt_html || "",
+                          }}
                         />
 
                         <button
-                          onClick={() => navigate(postPath(featured?.meta?.slug))}
+                          onClick={() =>
+                            navigate(postPath(featured?.meta?.slug))
+                          }
                           className="inline-flex items-center gap-2 text-primary font-semibold"
                         >
                           {t("blog.readMore")}
@@ -173,7 +206,7 @@ const BlogPageContent = () => {
                   <h2
                     className={cn(
                       "text-2xl md:text-3xl font-bold mb-8 text-foreground",
-                      isRTL ? "font-cairo" : "font-sans"
+                      isRTL ? "font-cairo" : "font-sans",
                     )}
                   >
                     {isRTL ? "جميع المقالات" : "All Articles"}
@@ -184,9 +217,15 @@ const BlogPageContent = () => {
                       const slug = article?.meta?.slug;
                       const title = article?.title || "";
                       const excerptHtml = article?.excerpt_html || "";
-                      const category = article?.category_name || (isRTL ? "مقالات" : "Articles");
+                      const category =
+                        article?.category_name ||
+                        (isRTL ? "مقالات" : "Articles");
                       const date = article?.created_at;
-                      const img = getImage(article?.main_image || article?.image_url || article?.featured_image);
+                      const img = getImage(
+                        article?.main_image ||
+                          article?.image_url ||
+                          article?.featured_image,
+                      );
 
                       return (
                         <Link
@@ -223,7 +262,7 @@ const BlogPageContent = () => {
                               <h3
                                 className={cn(
                                   "font-bold text-lg text-foreground group-hover:text-primary transition-colors line-clamp-2",
-                                  isRTL ? "font-cairo" : "font-sans"
+                                  isRTL ? "font-cairo" : "font-sans",
                                 )}
                               >
                                 {title}
@@ -231,7 +270,9 @@ const BlogPageContent = () => {
 
                               <div
                                 className="text-muted-foreground text-sm line-clamp-2"
-                                dangerouslySetInnerHTML={{ __html: excerptHtml }}
+                                dangerouslySetInnerHTML={{
+                                  __html: excerptHtml,
+                                }}
                               />
 
                               <div className="flex items-center gap-2 text-primary font-medium text-sm pt-2">

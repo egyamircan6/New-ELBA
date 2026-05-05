@@ -163,9 +163,10 @@ const DishwasherElbaAr = () => {
         q: "لماذا لا تقوم غسالة اطباق البا بتجفيف الأطباق جيداً؟",
         a: (
           <p>
-            ضعف التجفيف غالباً بسبب نفاد مساعد الشطف <strong>(Rinse Aid)</strong>{" "}
-            أو عطل في السخان <strong>(Heater)</strong>. تواصل معنا لفحص الدائرة
-            وتوفير القطع الأصلية عبر الرقم <strong>{PHONE_DISPLAY}</strong>.
+            ضعف التجفيف غالباً بسبب نفاد مساعد الشطف{" "}
+            <strong>(Rinse Aid)</strong> أو عطل في السخان{" "}
+            <strong>(Heater)</strong>. تواصل معنا لفحص الدائرة وتوفير القطع
+            الأصلية عبر الرقم <strong>{PHONE_DISPLAY}</strong>.
           </p>
         ),
         aText:
@@ -254,7 +255,7 @@ const DishwasherElbaAr = () => {
           "الأسعار تختلف حسب العطل والموديل، وتكلفة الكشف تُخصم من الإصلاح. تواصل واتساب أو اتصل 01211114528 للحصول على تقدير سريع.",
       },
     ],
-    []
+    [],
   );
 
   const jsonLd = useMemo(() => {
@@ -359,16 +360,16 @@ const DishwasherElbaAr = () => {
 
               <h1
                 className={cn(
-                  "text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight",
-                  isRTL ? "font-cairo" : "font-sans"
+                  "text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight lg:leading-[4rem]",
+                  isRTL ? "font-cairo" : "font-sans",
                 )}
               >
                 {SEO_H1}
               </h1>
 
               <p className="text-white/85 text-base md:text-lg max-w-2xl mx-auto mb-8">
-                احجز صيانة {DEVICE_NAME} الآن — خدمة احترافية بالمنزل مع قطع غيار
-                أصلية وضمان معتمد.
+                احجز صيانة {DEVICE_NAME} الآن — خدمة احترافية بالمنزل مع قطع
+                غيار أصلية وضمان معتمد.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -377,7 +378,7 @@ const DishwasherElbaAr = () => {
                   onClick={() => setIsServicePopupOpen(true)}
                   className={cn(
                     "bg-primary hover:bg-primary/90 text-primary-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full sm:w-auto",
-                    isRTL ? "font-cairo" : "font-sans"
+                    isRTL ? "font-cairo" : "font-sans",
                   )}
                 >
                   {t("hero.cta.request")}
@@ -394,7 +395,7 @@ const DishwasherElbaAr = () => {
                     variant="outline"
                     className={cn(
                       "border-white/80 text-green-500 hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full",
-                      isRTL ? "font-cairo" : "font-sans"
+                      isRTL ? "font-cairo" : "font-sans",
                     )}
                   >
                     <MessageCircle className="w-5 h-5" />
@@ -407,8 +408,8 @@ const DishwasherElbaAr = () => {
                     size="lg"
                     variant="outline"
                     className={cn(
-                      "border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full",
-                      isRTL ? "font-cairo" : "font-sans"
+                      "border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full",
+                      isRTL ? "font-cairo" : "font-sans",
                     )}
                   >
                     <Phone className="w-5 h-5" />
@@ -420,11 +421,13 @@ const DishwasherElbaAr = () => {
               <div
                 className={cn(
                   "mt-6 text-sm text-white/70",
-                  isRTL ? "font-cairo" : "font-sans"
+                  isRTL ? "font-cairo" : "font-sans",
                 )}
               >
                 رقم الصيانة:{" "}
-                <span className="font-semibold text-white">{PHONE_DISPLAY}</span>
+                <span className="font-semibold text-white">
+                  {PHONE_DISPLAY}
+                </span>
               </div>
             </div>
           </div>
@@ -437,7 +440,7 @@ const DishwasherElbaAr = () => {
           <h2
             className={cn(
               "text-2xl md:text-3xl font-bold text-center mb-12 text-foreground",
-              isRTL ? "font-cairo" : "font-sans"
+              isRTL ? "font-cairo" : "font-sans",
             )}
           >
             {t("device.steps.title")}
@@ -458,7 +461,7 @@ const DishwasherElbaAr = () => {
                 <h3
                   className={cn(
                     "font-bold text-lg mb-2 text-foreground",
-                    isRTL ? "font-cairo" : "font-sans"
+                    isRTL ? "font-cairo" : "font-sans",
                   )}
                 >
                   {step.title}
@@ -476,7 +479,7 @@ const DishwasherElbaAr = () => {
           <h2
             className={cn(
               "text-2xl md:text-3xl font-bold text-center mb-10 text-foreground",
-              isRTL ? "font-cairo" : "font-sans"
+              isRTL ? "font-cairo" : "font-sans",
             )}
           >
             خدمة صيانة {DEVICE_NAME}
@@ -488,7 +491,7 @@ const DishwasherElbaAr = () => {
                 <p
                   className={cn(
                     "text-muted-foreground leading-relaxed mb-8",
-                    isRTL ? "font-cairo" : "font-sans"
+                    isRTL ? "font-cairo" : "font-sans",
                   )}
                 >
                   {DEVICE_DESC}
@@ -500,7 +503,7 @@ const DishwasherElbaAr = () => {
                     onClick={() => setIsServicePopupOpen(true)}
                     className={cn(
                       "bg-primary hover:bg-primary/90 gap-2",
-                      isRTL ? "font-cairo" : "font-sans"
+                      isRTL ? "font-cairo" : "font-sans",
                     )}
                   >
                     {t("hero.cta.request")}
@@ -516,7 +519,7 @@ const DishwasherElbaAr = () => {
                       variant="outline"
                       className={cn(
                         "gap-2",
-                        isRTL ? "font-cairo" : "font-sans"
+                        isRTL ? "font-cairo" : "font-sans",
                       )}
                     >
                       <MessageCircle className="w-5 h-5" />
@@ -530,7 +533,7 @@ const DishwasherElbaAr = () => {
                       variant="outline"
                       className={cn(
                         "gap-2",
-                        isRTL ? "font-cairo" : "font-sans"
+                        isRTL ? "font-cairo" : "font-sans",
                       )}
                     >
                       <Phone className="w-5 h-5" />
@@ -549,7 +552,7 @@ const DishwasherElbaAr = () => {
                       <p
                         className={cn(
                           "text-sm text-muted-foreground",
-                          isRTL ? "font-cairo" : "font-sans"
+                          isRTL ? "font-cairo" : "font-sans",
                         )}
                       >
                         {DEVICE_NAME}
@@ -557,7 +560,7 @@ const DishwasherElbaAr = () => {
                       <span
                         className={cn(
                           "text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium",
-                          isRTL ? "font-cairo" : "font-sans"
+                          isRTL ? "font-cairo" : "font-sans",
                         )}
                       >
                         خدمة منزلية
@@ -587,7 +590,7 @@ const DishwasherElbaAr = () => {
                         onClick={() => setIsServicePopupOpen(true)}
                         className={cn(
                           "w-full",
-                          isRTL ? "font-cairo" : "font-sans"
+                          isRTL ? "font-cairo" : "font-sans",
                         )}
                       >
                         {t("hero.cta.request")}
@@ -603,7 +606,7 @@ const DishwasherElbaAr = () => {
                           variant="outline"
                           className={cn(
                             "w-full gap-2",
-                            isRTL ? "font-cairo" : "font-sans"
+                            isRTL ? "font-cairo" : "font-sans",
                           )}
                         >
                           <MessageCircle className="w-4 h-4" />
@@ -615,7 +618,7 @@ const DishwasherElbaAr = () => {
                     <div
                       className={cn(
                         "mt-4 text-sm text-muted-foreground",
-                        isRTL ? "font-cairo" : "font-sans"
+                        isRTL ? "font-cairo" : "font-sans",
                       )}
                     >
                       رقم الصيانة:{" "}
@@ -662,8 +665,8 @@ const DishwasherElbaAr = () => {
               <p className="text-muted-foreground leading-relaxed font-cairo text-right">
                 تحتاج إلى تدخل فني عند ظهور تسريب مياه، أو عدم سحب أو صرف
                 المياه، أو توقف التسخين، أو ضعف التجفيف، أو ظهور كود خطأ على
-                الشاشة، أو صدور صوت غير طبيعي أثناء التشغيل. في هذه الحالات
-                يفضل عدم الاستمرار في الاستخدام والتواصل فورًا مع مركز الصيانة.
+                الشاشة، أو صدور صوت غير طبيعي أثناء التشغيل. في هذه الحالات يفضل
+                عدم الاستمرار في الاستخدام والتواصل فورًا مع مركز الصيانة.
               </p>
             </div>
           </div>
@@ -677,7 +680,7 @@ const DishwasherElbaAr = () => {
             <h2
               className={cn(
                 "text-xl md:text-2xl font-bold mb-6 text-foreground flex items-center gap-2",
-                isRTL ? "font-cairo" : "font-sans"
+                isRTL ? "font-cairo" : "font-sans",
               )}
             >
               💡 {t("device.tips.title")} {DEVICE_NAME}
@@ -702,7 +705,7 @@ const DishwasherElbaAr = () => {
                 onClick={() => setIsServicePopupOpen(true)}
                 className={cn(
                   "bg-primary hover:bg-primary/90 gap-2",
-                  isRTL ? "font-cairo" : "font-sans"
+                  isRTL ? "font-cairo" : "font-sans",
                 )}
               >
                 {t("hero.cta.request")}
@@ -716,10 +719,7 @@ const DishwasherElbaAr = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className={cn(
-                    "gap-2",
-                    isRTL ? "font-cairo" : "font-sans"
-                  )}
+                  className={cn("gap-2", isRTL ? "font-cairo" : "font-sans")}
                 >
                   <MessageCircle className="w-5 h-5" />
                   {t("contact.whatsapp")}
@@ -737,7 +737,7 @@ const DishwasherElbaAr = () => {
             <h2
               className={cn(
                 "text-2xl md:text-3xl font-extrabold text-foreground mb-8 text-right",
-                isRTL ? "font-cairo" : "font-sans"
+                isRTL ? "font-cairo" : "font-sans",
               )}
             >
               الأسئلة الشائعة حول صيانة غسالات اطباق البا
@@ -755,7 +755,7 @@ const DishwasherElbaAr = () => {
                   variant="outline"
                   className={cn(
                     "gap-2 w-full sm:w-auto",
-                    isRTL ? "font-cairo" : "font-sans"
+                    isRTL ? "font-cairo" : "font-sans",
                   )}
                 >
                   <Phone className="w-5 h-5" />
@@ -771,7 +771,7 @@ const DishwasherElbaAr = () => {
                 <Button
                   className={cn(
                     "gap-2 w-full sm:w-auto",
-                    isRTL ? "font-cairo" : "font-sans"
+                    isRTL ? "font-cairo" : "font-sans",
                   )}
                 >
                   <MessageCircle className="w-5 h-5" />
@@ -783,7 +783,7 @@ const DishwasherElbaAr = () => {
                 onClick={() => setIsServicePopupOpen(true)}
                 className={cn(
                   "w-full sm:w-auto",
-                  isRTL ? "font-cairo" : "font-sans"
+                  isRTL ? "font-cairo" : "font-sans",
                 )}
               >
                 {t("hero.cta.request")}

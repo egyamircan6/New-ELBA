@@ -320,7 +320,7 @@ const CookerBuiltinElbaAr = () => {
                 خدمة منزلية
               </p>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-cairo">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight lg:leading-[5rem] font-cairo">
                 أهلاً بك في صيانة بوتاجاز البا بلت ان المعتمدة في مصر
               </h1>
 
@@ -365,7 +365,7 @@ const CookerBuiltinElbaAr = () => {
                     size="lg"
                     variant="outline"
                     className={cn(
-                      "border-white/80 text-white hover:bg-white hover:text-foreground gap-2",
+                      "border-white/80 text-black hover:bg-white hover:text-foreground gap-2",
                       "text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                     )}
                   >

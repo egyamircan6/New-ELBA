@@ -23,8 +23,7 @@ const SITE_URL = "https://alba-eg.com/";
 const PAGE_URL = "https://alba-eg.com/صيانة-بوتاجاز-البا";
 const BRAND_URL = "https://americangroup-eg.com/";
 
-const LINK_CLASS =
-  "text-primary underline font-semibold hover:text-primary/80";
+const LINK_CLASS = "text-primary underline font-semibold hover:text-primary/80";
 
 type FaqItemType = {
   q: string;
@@ -118,8 +117,8 @@ const CookerElbaAr = () => {
         q: "متى أحتاج إلى صيانة بوتاجاز بلت إن البا؟",
         a: (
           <p>
-            تحتاج إلى صيانة بوتاجاز بلت إن البا عند وجود مشكلة في الاشتعال أو ضعف
-            في الشعلة أو خلل في المفاتيح الكهربائية. اتصل على{" "}
+            تحتاج إلى صيانة بوتاجاز بلت إن البا عند وجود مشكلة في الاشتعال أو
+            ضعف في الشعلة أو خلل في المفاتيح الكهربائية. اتصل على{" "}
             <a href={`tel:${PHONE_TEL}`} className={LINK_CLASS}>
               <strong>{PHONE_DISPLAY}</strong>
             </a>{" "}
@@ -160,7 +159,7 @@ const CookerElbaAr = () => {
         aText: `لحجز صيانة مسطح البا بالمنزل اتصل على ${PHONE_DISPLAY} واذكر نوع العطل. يتم إرسال فني متخصص للفحص الدقيق والتنظيف وضبط الأداء لضمان التشغيل بأمان.`,
       },
     ],
-    []
+    [],
   );
 
   const schemaGraph = useMemo(() => {
@@ -301,7 +300,7 @@ const CookerElbaAr = () => {
         <div className="absolute inset-0">
           <div className="container mx-auto px-4 h-full flex items-center justify-center">
             <div className="text-center text-white z-10 max-w-3xl">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 font-cairo leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 font-cairo leading-tight lg:leading-[5rem]">
                 أهـــلاً بكــــم فــــي المركــز المعتمد لصيانة بوتاجاز البا في
                 مصر
               </h1>
@@ -340,7 +339,7 @@ const CookerElbaAr = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/80 text-white hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
+                    className="border-white/80 text-black hover:bg-white hover:text-foreground gap-2 text-base md:text-lg px-7 md:px-8 w-full font-cairo"
                   >
                     <Phone className="w-5 h-5" />
                     {PHONE_DISPLAY}
@@ -422,10 +421,7 @@ const CookerElbaAr = () => {
                       </Button>
                     </a>
 
-                    <a
-                      href={`tel:${PHONE_TEL}`}
-                      className="w-full sm:w-auto"
-                    >
+                    <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
                       <Button
                         variant="outline"
                         className="gap-2 w-full font-cairo"
@@ -557,10 +553,7 @@ const CookerElbaAr = () => {
                       </Button>
                     </a>
 
-                    <a
-                      href={`tel:${PHONE_TEL}`}
-                      className="w-full sm:w-auto"
-                    >
+                    <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
                       <Button
                         variant="outline"
                         className="gap-2 w-full font-cairo"
@@ -690,10 +683,7 @@ const CookerElbaAr = () => {
                       </Button>
                     </a>
 
-                    <a
-                      href={`tel:${PHONE_TEL}`}
-                      className="w-full sm:w-auto"
-                    >
+                    <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
                       <Button
                         variant="outline"
                         className="gap-2 w-full font-cairo"
@@ -790,9 +780,9 @@ const CookerElbaAr = () => {
 
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed font-cairo">
-                      بوتاجازات البا البلت إن تحتاج خبرة خاصة أثناء الفك والتركيب
-                      حتى لا تتأثر وحدات المطبخ أو توصيلات الغاز. نحن نوفر فنيين
-                      متخصصين في{" "}
+                      بوتاجازات البا البلت إن تحتاج خبرة خاصة أثناء الفك
+                      والتركيب حتى لا تتأثر وحدات المطبخ أو توصيلات الغاز. نحن
+                      نوفر فنيين متخصصين في{" "}
                       <a
                         className={LINK_CLASS}
                         href="https://alba-eg.com/%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D8%A8%D9%88%D8%AA%D8%A7%D8%AC%D8%A7%D8%B2-%D8%A7%D9%84%D8%A8%D8%A7-%D8%A8%D9%84%D8%AA-%D8%A7%D9%86"
@@ -801,8 +791,8 @@ const CookerElbaAr = () => {
                       >
                         صيانة بوتاجاز بلت إن البا
                       </a>{" "}
-                      مع تجهيز الأدوات وقطع الغيار قبل الزيارة لتقليل مدة الإصلاح
-                      وإنهاء العمل من أول مرة.
+                      مع تجهيز الأدوات وقطع الغيار قبل الزيارة لتقليل مدة
+                      الإصلاح وإنهاء العمل من أول مرة.
                     </p>
                   </div>
 
@@ -829,10 +819,7 @@ const CookerElbaAr = () => {
                       </Button>
                     </a>
 
-                    <a
-                      href={`tel:${PHONE_TEL}`}
-                      className="w-full sm:w-auto"
-                    >
+                    <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
                       <Button
                         variant="outline"
                         className="gap-2 w-full font-cairo"
@@ -964,10 +951,7 @@ const CookerElbaAr = () => {
                       </Button>
                     </a>
 
-                    <a
-                      href={`tel:${PHONE_TEL}`}
-                      className="w-full sm:w-auto"
-                    >
+                    <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
                       <Button
                         variant="outline"
                         className="gap-2 w-full font-cairo"
@@ -1097,10 +1081,7 @@ const CookerElbaAr = () => {
                       </Button>
                     </a>
 
-                    <a
-                      href={`tel:${PHONE_TEL}`}
-                      className="w-full sm:w-auto"
-                    >
+                    <a href={`tel:${PHONE_TEL}`} className="w-full sm:w-auto">
                       <Button
                         variant="outline"
                         className="gap-2 w-full font-cairo"

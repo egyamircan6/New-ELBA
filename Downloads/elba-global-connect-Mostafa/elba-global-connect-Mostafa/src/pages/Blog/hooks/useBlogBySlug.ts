@@ -7,23 +7,20 @@ function sanitizeHtml(html: string) {
   // حذف script tags كحد أدنى
   return html.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "");
 }
+const BASE = "https://backs.seoi.ai/storage/";
 
-/** 2) normalize للصور داخل المحتوى */
-function normalizeContentImages(html: string) {
-  if (!html) return "";
-  const BASE = "https://rdtfhjguho8.american-softwares.com/storage/";
-  return html.replace(/<img[^>]+src=["']([^"']+)["']/gi, (m, src) => {
-    const fixed = src.startsWith("http") ? src : BASE + src.replace(/^\/+/, "");
-    return m.replace(src, fixed);
-  });
-}
+export const cleanImageUrl = (url?: string | null) => {
+  if (!url) return undefined;
+  if (url.startsWith("http")) return url;
+  return BASE + (url.startsWith("/") ? url : `/${url}`);
+};
 
-/** 3) تنظيف url للصورة الرئيسية */
-function cleanImageUrl(src?: string) {
-  if (!src) return "";
-  const BASE = "https://rdtfhjguho8.american-softwares.com/storage/";
-  return src.startsWith("http") ? src : BASE + src.replace(/^\/+/, "");
-}
+export const normalizeContentImages = (html = "") => {
+  return html
+    .replace(/src="([^"]*?)\/api\/v1\/+storage\/+/g, 'src="$1/storage/')
+    .replace(/src="([^"]*\/storage)\/+/g, 'src="$1/')
+    .replace(/src="(article_images\/[^"]+)"/g, `src="${BASE}$1"`);
+};
 
 export function useBlogBySlug(slug?: string) {
   return useQuery({
@@ -42,7 +39,9 @@ export function useBlogBySlug(slug?: string) {
         contentHtml: sanitizeHtml(normalizeContentImages(post.content)),
         excerptHtml: post.excerpt_html,
 
-        mainImage: cleanImageUrl(post.main_image || post.image_url || post.featured_image),
+        mainImage: cleanImageUrl(
+          post.main_image || post.image_url || post.featured_image,
+        ),
         images: post.images?.map((i: any) => cleanImageUrl(i.image_path)) || [],
 
         metaTitle: post.meta?.title,
